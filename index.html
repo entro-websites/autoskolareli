@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Škola Reli Niš - Obuka za AM, A1, A2, A i B kategoriju</title>
+<meta name="description" content="Auto škola Reli iz Niša - obuka kandidata za vozače od 1998. godine. Kategorije AM, A1, A2, A, B i CPC sertifikat za profesionalne vozače.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#ca0005;
+    --accent-dark:#8f0004;
+    --accent-darker:#5e0003;
+    --accent-soft:rgba(202,0,5,0.07);
+    --accent-soft-2:rgba(202,0,5,0.14);
+    --accent-glow:rgba(202,0,5,0.28);
+
+    --text:rgba(20,17,17,0.92);
+    --text-muted:rgba(20,17,17,0.65);
+    --text-faint:rgba(20,17,17,0.45);
+
+    --bg:#ffffff;
+    --bg-off:#fbf8f8;
+    --border-soft:rgba(202,0,5,0.14);
+
+    --radius-btn:8px;
+    --radius-card:20px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Roboto',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.65;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Poppins',sans-serif;
+    color:var(--text);
+    line-height:1.15;
+    font-weight:700;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+  .wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding-left:24px;
+    padding-right:24px;
+  }
+  @media (max-width:768px){
+    .wrap{padding-left:20px;padding-right:20px;}
+  }
+
+  section{padding-top:96px;padding-bottom:96px;}
+  @media (max-width:768px){
+    section{padding-top:64px;padding-bottom:64px;}
+  }
+
+  p{max-width:65ch;}
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px;
+    height:2px;
+    background:var(--accent);
+    display:inline-block;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:15px 28px;
+    border-radius:var(--radius-btn);
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    box-shadow:0 8px 24px -8px var(--accent-glow);
+  }
+  .btn-primary:hover{
+    background:var(--accent-dark);
+    transform:translateY(-2px);
+    box-shadow:0 14px 30px -10px var(--accent-glow);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--text);
+    border:1.5px solid rgba(20,17,17,0.18);
+  }
+  .btn-outline:hover{
+    border-color:var(--accent);
+    color:var(--accent-dark);
+  }
+  .btn-block{width:100%;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    background:#fff;
+    border-bottom:1px solid rgba(20,17,17,0.08);
+    transition:backdrop-filter .2s ease, background .2s ease;
+  }
+  header.scrolled{
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:84px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo img{height:42px;width:auto;}
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:36px;
+  }
+  .nav-links a{
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+    font-size:15px;
+    color:var(--text);
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .nav-cta-desktop{display:flex;align-items:center;gap:20px;}
+
+  .burger{
+    display:none;
+    width:40px;
+    height:40px;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+  }
+  .burger span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:var(--text);
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.active span:nth-child(2){opacity:0;}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-panel{
+    display:none;
+    flex-direction:column;
+    background:#fff;
+    border-top:1px solid rgba(20,17,17,0.08);
+    padding-top:12px;
+    padding-bottom:24px;
+  }
+  .mobile-panel.open{display:flex;}
+  .mobile-panel a{
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+    font-size:16px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(20,17,17,0.06);
+  }
+  .mobile-panel .btn{margin-top:16px;}
+
+  @media (max-width:991px){
+    .nav-links,.nav-cta-desktop{display:none;}
+    .burger{display:flex;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding-top:100px;
+    padding-bottom:100px;
+    background:linear-gradient(180deg, var(--bg-off) 0%, #fff 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-200px;
+    right:-200px;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle, var(--accent-soft-2) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5vw, 58px);
+    font-weight:800;
+    margin-bottom:22px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 span{color:var(--accent);}
+  .hero p.lead{
+    font-size:18px;
+    color:var(--text-muted);
+    margin-bottom:32px;
+    max-width:52ch;
+  }
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-badges{
+    display:flex;
+    gap:28px;
+    margin-top:40px;
+    flex-wrap:wrap;
+  }
+  .hero-badge{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    color:var(--text-muted);
+  }
+  .hero-badge svg{width:20px;height:20px;flex-shrink:0;}
+
+  .hero-media{
+    position:relative;
+    border-radius:var(--radius-card);
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(20,17,17,0.35);
+  }
+  .hero-media img{width:100%;height:460px;object-fit:cover;}
+  .hero-media-tag{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(6px);
+    padding:14px 18px;
+    border-radius:12px;
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--accent-dark);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .hero-media-tag svg{width:18px;height:18px;}
+
+  @media (max-width:991px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-media img{height:320px;}
+  }
+
+  /* ===== PAIN SECTION ===== */
+  .pain{
+    background:var(--bg-off);
+    border-top:1px solid rgba(20,17,17,0.06);
+    border-bottom:1px solid rgba(20,17,17,0.06);
+  }
+  .pain-inner{
+    max-width:820px;
+  }
+  .pain h2{
+    font-size:clamp(24px,3vw,32px);
+    margin-bottom:20px;
+  }
+  .pain p{
+    font-size:17px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+    max-width:70ch;
+  }
+
+  /* ===== SECTION HEADS ===== */
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,4vw,40px);
+  }
+  .section-head p{
+    color:var(--text-muted);
+    font-size:17px;
+    margin-top:16px;
+  }
+
+  /* ===== KATEGORIJE ===== */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .cat-card{
+    border:1px solid rgba(20,17,17,0.08);
+    border-radius:var(--radius-card);
+    padding:32px 28px;
+    background:#fff;
+    transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    opacity:1;
+  }
+  .cat-card:hover{
+    box-shadow:0 24px 48px -28px rgba(20,17,17,0.22);
+    transform:translateY(-4px);
+    border-color:var(--border-soft);
+  }
+  .cat-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:var(--accent-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+  }
+  .cat-icon svg{width:26px;height:26px;stroke:var(--accent);}
+  .cat-card h3{
+    font-size:20px;
+    margin-bottom:6px;
+  }
+  .cat-card .cat-age{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    color:var(--accent-dark);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:14px;
+    display:block;
+  }
+  .cat-card p{
+    color:var(--text-muted);
+    font-size:15px;
+  }
+
+  @media (max-width:991px){
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:600px){
+    .cat-grid{grid-template-columns:1fr;}
+  }
+
+  .cpc-banner{
+    margin-top:32px;
+    border-radius:var(--radius-card);
+    background:var(--accent);
+    color:#fff;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .cpc-banner h3{color:#fff;font-size:22px;margin-bottom:8px;}
+  .cpc-banner p{color:rgba(255,255,255,0.88);max-width:60ch;}
+  .cpc-banner .btn-outline{
+    border-color:rgba(255,255,255,0.5);
+    color:#fff;
+    flex-shrink:0;
+  }
+  .cpc-banner .btn-outline:hover{
+    border-color:#fff;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+  }
+
+  /* ===== INFO / USLOVI-LOKACIJE ===== */
+  .info-section{background:var(--bg-off);}
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .info-card{
+    background:#fff;
+    border-radius:var(--radius-card);
+    padding:32px;
+    border:1px solid rgba(20,17,17,0.08);
+  }
+  .info-card h3{
+    font-size:19px;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .info-card h3 svg{width:22px;height:22px;stroke:var(--accent);flex-shrink:0;}
+  .info-list li{
+    display:flex;
+    justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid rgba(20,17,17,0.06);
+    font-size:15px;
+  }
+  .info-list li:last-child{border-bottom:none;}
+  .info-list li span:first-child{color:var(--text-muted);}
+  .info-list li span:last-child{font-weight:600;font-family:'Poppins',sans-serif;}
+
+  .contact-mini{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:14px;
+  }
+  .contact-mini a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:16px;
+    color:var(--text);
+    transition:color .15s ease;
+  }
+  .contact-mini a:hover{color:var(--accent-dark);}
+  .contact-mini a svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;}
+  .contact-mini .addr{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    font-size:15px;
+    color:var(--text-muted);
+  }
+  .contact-mini .addr svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;margin-top:1px;}
+
+  @media (max-width:768px){
+    .info-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== O BRENDU ===== */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-media{
+    border-radius:var(--radius-card);
+    overflow:hidden;
+    box-shadow:0 30px 60px -34px rgba(20,17,17,0.3);
+  }
+  .about-media img{width:100%;height:420px;object-fit:cover;}
+  .about-text h2{
+    font-size:clamp(26px,3.6vw,36px);
+    margin-bottom:20px;
+  }
+  .about-text p{
+    color:var(--text-muted);
+    font-size:16px;
+    margin-bottom:16px;
+  }
+  .about-points{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .about-point{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .about-point svg{width:22px;height:22px;stroke:var(--accent);flex-shrink:0;margin-top:2px;}
+  .about-point strong{font-family:'Poppins',sans-serif;font-size:15px;display:block;margin-bottom:2px;}
+  .about-point span{color:var(--text-muted);font-size:14px;}
+
+  @media (max-width:991px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-media img{height:320px;}
+  }
+
+  /* ===== DOKAZI / STATS ===== */
+  .stats-section{
+    background:var(--accent-darker);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .stats-section::before{
+    content:"";
+    position:absolute;
+    top:-150px;
+    left:-150px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .stats-inner{
+    position:relative;
+    z-index:2;
+  }
+  .stats-head{max-width:640px;margin-bottom:48px;}
+  .stats-head .eyebrow{color:#fff;}
+  .stats-head .eyebrow::before{background:#fff;}
+  .stats-head h2{color:#fff;font-size:clamp(26px,3.6vw,36px);}
+  .stats-head p{color:rgba(255,255,255,0.75);margin-top:14px;}
+  .stats-row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+  }
+  .stat-box{
+    padding:32px;
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:var(--radius-card);
+  }
+  .stat-box .num{
+    font-family:'Poppins',sans-serif;
+    font-weight:800;
+    font-size:clamp(32px,5vw,48px);
+    color:#fff;
+    line-height:1;
+    margin-bottom:10px;
+  }
+  .stat-box .label{
+    color:rgba(255,255,255,0.72);
+    font-size:15px;
+  }
+  @media (max-width:600px){
+    .stats-row{grid-template-columns:1fr;}
+  }
+
+  /* ===== CTA / KONTAKT ===== */
+  .cta-section{background:var(--bg-off);}
+  .cta-grid{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .cta-left h2{
+    font-size:clamp(26px,3.6vw,36px);
+    margin-bottom:18px;
+  }
+  .cta-left p{
+    color:var(--text-muted);
+    font-size:16px;
+    margin-bottom:28px;
+  }
+  .cta-left .contact-mini{margin-top:6px;}
+  .cta-direct{
+    margin-top:32px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .form-card{
+    background:#fff;
+    border:1px solid rgba(20,17,17,0.08);
+    border-radius:var(--radius-card);
+    padding:36px;
+    box-shadow:0 30px 60px -40px rgba(20,17,17,0.2);
+  }
+  .form-card h3{font-size:20px;margin-bottom:6px;}
+  .form-card .sub{color:var(--text-muted);font-size:14px;margin-bottom:24px;}
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-bottom:14px;
+  }
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field.full{grid-column:1/-1;}
+  .field label{
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--text-muted);
+  }
+  .field input,.field select,.field textarea{
+    font-family:'Roboto',sans-serif;
+    font-size:15px;
+    padding:12px 14px;
+    border:1.5px solid rgba(20,17,17,0.14);
+    border-radius:var(--radius-btn);
+    background:var(--bg-off);
+    color:var(--text);
+    transition:border-color .15s ease;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+  }
+  .field textarea{resize:vertical;min-height:90px;}
+
+  @media (max-width:991px){
+    .cta-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .form-row{grid-template-columns:1fr;}
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:#161112;
+    color:rgba(255,255,255,0.7);
+    padding-top:56px;
+    padding-bottom:32px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:36px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo{height:38px;margin-bottom:16px;filter:brightness(0) invert(1);}
+  .footer-grid p{color:rgba(255,255,255,0.55);font-size:14px;max-width:38ch;}
+  .footer-col h4{
+    color:#fff;
+    font-size:15px;
+    margin-bottom:16px;
+  }
+  .footer-col a{
+    display:block;
+    color:rgba(255,255,255,0.6);
+    font-size:14px;
+    padding:6px 0;
+    transition:color .15s ease;
+  }
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    padding-top:24px;
+    font-size:13px;
+    color:rgba(255,255,255,0.4);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  @media (max-width:768px){
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+
+  /* ===== REVEAL ===== */
+  .reveal{
+    opacity:1;
+    transform:translateY(0);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .reveal.pending{
+    opacity:1;
+    transform:translateY(12px);
+  }
+  .reveal.in-view{
+    transform:translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">
+      <img src="assets/logo.png" alt="Auto škola Reli - logo">
+    </a>
+    <nav class="nav-links">
+      <a href="#kategorije">Kategorije</a>
+      <a href="#uslovi">Uslovi i lokacije</a>
+      <a href="#o-nama">O nama</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta-desktop">
+      <a href="tel:+38118241241" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;">018/241-241</a>
+      <a href="#kontakt" class="btn btn-primary">Prijavi se za obuku</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Otvori meni">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="wrap" style="display:flex;flex-direction:column;">
+      <a href="#kategorije">Kategorije</a>
+      <a href="#uslovi">Uslovi i lokacije</a>
+      <a href="#o-nama">O nama</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn btn-primary btn-block">Prijavi se za obuku</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Auto škola Reli · Niš · od 1998. godine</div>
+        <h1>Vozačku dozvolu stičeš <span>sigurno i bez lutanja</span>, uz instruktora koji te vodi do kraja</h1>
+        <p class="lead">Obučavamo kandidate za AM, A1, A2, A i B kategoriju, kao i profesionalne vozače za CPC sertifikat. Prijaviš se jednom, a mi vodimo ceo proces do polaganja.</p>
+        <div class="hero-cta-row">
+          <a href="#kontakt" class="btn btn-primary">Prijavi se za obuku</a>
+          <a href="tel:+38118241241" class="btn btn-outline">Pozovi 018/241-241</a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            27 godina rada
+          </div>
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Više hiljada obučenih vozača
+          </div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/1-20.jpg" alt="Vozila auto škole Reli parkirana u parku, spremna za čas vožnje">
+        <div class="hero-media-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Savremen vozni park
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOL UVOD -->
+  <section class="pain">
+    <div class="wrap">
+      <div class="pain-inner reveal">
+        <h2>Ne znaš odakle da počneš papire za vozačku?</h2>
+        <p>Možda si već čuo priče o instruktorima koji žure, teoriji koja zvuči kao strani jezik i placu na kome se svi osim tebe snalaze. Nije lako sam da proceniš kad si stvarno spreman za saobraćaj.</p>
+        <p>Kod nas ne ideš na probu. Prolaziš kroz obuku korak po korak, sa istim instruktorom od prvog do poslednjeg časa, dok ne budeš siguran da možeš sam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLAVNI SADRŽAJ: KATEGORIJE -->
+  <section id="kategorije">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Ponuda obuke</div>
+        <h2>Obuka za svaku kategoriju vozača</h2>
+        <p>Bilo da tek uzimaš prvu dozvolu ili proširuješ postojeću, imamo program koji odgovara tvojim godinama i cilju.</p>
+      </div>
+
+      <div class="cat-grid">
+        <div class="cat-card reveal">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+          </div>
+          <span class="cat-age">Od 16 godina</span>
+          <h3>Kategorija AM</h3>
+          <p>Obuka za mopede i lake motocikle - prvi korak ka samostalnom saobraćaju za najmlađe kandidate.</p>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+          </div>
+          <span class="cat-age">Od 16 godina</span>
+          <h3>Kategorija A1</h3>
+          <p>Motocikli do 125 kubika. Idealan izbor za brzo i praktično kretanje po gradu.</p>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+          </div>
+          <span class="cat-age">Od 18 godina</span>
+          <h3>Kategorija A2</h3>
+          <p>Motocikli srednje snage, korak pred punu A kategoriju. Radimo teoriju i vožnju na placu i u saobraćaju.</p>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+          </div>
+          <span class="cat-age">Od 24 godine</span>
+          <h3>Kategorija A</h3>
+          <p>Motocikli bez ograničenja snage, za kandidate koji žele potpunu slobodu na dva točka.</p>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="6" rx="1.5"/><circle cx="7" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
+          </div>
+          <span class="cat-age">Od 17 godina</span>
+          <h3>Kategorija B</h3>
+          <p>Klasična obuka za putnički automobil. Najtraženija kategorija, uz teoriju, poligon i vožnju u gradu.</p>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          </div>
+          <span class="cat-age">Za profesionalce</span>
+          <h3>Osnovna i periodična obuka</h3>
+          <p>Priprema za sticanje i obnovu CPC sertifikata, obavezno za sve profesionalne vozače.</p>
+        </div>
+      </div>
+
+      <div class="cpc-banner reveal">
+        <div>
+          <h3>Radiš kao profesionalni vozač?</h3>
+          <p>Vodimo te kroz osnovnu i periodičnu CPC obuku, po važećem programu, bez gubljenja vremena na nepotpunu dokumentaciju.</p>
+        </div>
+        <a href="#kontakt" class="btn btn-outline">Prijavi se za CPC obuku</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- USLOVI I LOKACIJE -->
+  <section id="uslovi" class="info-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Praktične informacije</div>
+        <h2>Uslovi za upis, lokacije i kontakt</h2>
+        <p>Sve što treba da znaš pre nego što se prijaviš, na jednom mestu.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+            Uslovi za upis po kategorijama
+          </h3>
+          <ul class="info-list">
+            <li><span>AM - mopedi</span><span>16 godina</span></li>
+            <li><span>A1 - motocikli do 125cc</span><span>16 godina</span></li>
+            <li><span>A2 - motocikli srednje snage</span><span>18 godina</span></li>
+            <li><span>A - motocikli bez ograničenja</span><span>24 godine</span></li>
+            <li><span>B - putnički automobil</span><span>17 godina</span></li>
+          </ul>
+        </div>
+
+        <div class="info-card reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Lokacije i kontakt telefoni
+          </h3>
+          <div class="contact-mini">
+            <div class="addr">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Učionica Centar - teorijska nastava i prijava kandidata</span>
+            </div>
+            <a href="tel:+38118241241">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.87.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.88.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
+              018/241-241
+            </a>
+            <div class="addr" style="margin-top:8px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Poligon i teren za vožnju - dogovor sa instruktorom po grupama</span>
+            </div>
+            <a href="tel:+381601811011">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.87.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.88.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
+              060/1811-011
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O BRENDU -->
+  <section id="o-nama">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <img src="assets/1-29.jpg" alt="Instruktori i polaznici auto škole Reli pored vozila u parku">
+      </div>
+      <div class="about-text reveal">
+        <div class="eyebrow">O auto školi Reli</div>
+        <h2>Radimo u Nišu od 1998. godine, i to se oseti u pristupu</h2>
+        <p>Auto škola Reli obučava kandidate za AM, A1, A2, A i B kategoriju, kao i profesionalne vozače koji polažu za CPC sertifikat. Nismo firma koja je juče otvorila vrata - ovim se bavimo skoro tri decenije.</p>
+        <p>Instruktori kod nas ne jure kroz program. Vodimo te dosledno, od prve teorijske table do trenutka kad samostalno uđeš u saobraćaj.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Dosledna obuka</strong>
+              <span>Isti instruktor od prvog do zadnjeg časa vožnje.</span>
+            </div>
+          </div>
+          <div class="about-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Svi profili kandidata</strong>
+              <span>Od prve moped dozvole do CPC obuke za profesionalce.</span>
+            </div>
+          </div>
+          <div class="about-point">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Vozni park spreman za teren</strong>
+              <span>Vežbaš na vozilima koja su redovno servisirana i obeležena.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOKAZI -->
+  <section class="stats-section">
+    <div class="wrap stats-inner">
+      <div class="stats-head reveal">
+        <div class="eyebrow">Brojke koje stoje iza nas</div>
+        <h2>27 godina obučavamo vozače u Nišu</h2>
+        <p>Ne pravimo obećanja - imamo istoriju rada koja to potvrđuje.</p>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box reveal">
+          <div class="num">1998.</div>
+          <div class="label">Godina osnivanja auto škole Reli</div>
+        </div>
+        <div class="stat-box reveal">
+          <div class="num">1000+</div>
+          <div class="label">Kandidata osposobljenih za samostalnu vožnju</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT / CTA -->
+  <section id="kontakt" class="cta-section">
+    <div class="wrap cta-grid">
+      <div class="cta-left reveal">
+        <div class="eyebrow">Prijava</div>
+        <h2>Rezerviši mesto u sledećoj grupi</h2>
+        <p>Pozovi nas direktno ili popuni formu - vraćamo se sa odgovorom istog radnog dana i dogovaramo termin prvog časa.</p>
+        <div class="contact-mini">
+          <a href="tel:+38118241241">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.87.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.88.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
+            018/241-241
+          </a>
+          <a href="mailto:info@autoskolareli.rs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            info@autoskolareli.rs
+          </a>
+        </div>
+        <div class="cta-direct">
+          <a href="tel:+38118241241" class="btn btn-primary">Pozovi auto školu odmah</a>
+        </div>
+      </div>
+
+      <form class="form-card reveal" action="#" onsubmit="return false;">
+        <h3>Prijavi se za obuku</h3>
+        <p class="sub">Ostavi podatke i javljamo se sa slobodnim terminima.</p>
+        <div class="form-row">
+          <div class="field">
+            <label for="ime">Ime i prezime</label>
+            <input type="text" id="ime" name="ime" placeholder="Marko Marković" required>
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="060/123-4567" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="kategorija">Kategorija koja te interesuje</label>
+            <select id="kategorija" name="kategorija">
+              <option>AM - mopedi</option>
+              <option>A1 - motocikli do 125cc</option>
+              <option>A2 - motocikli srednje snage</option>
+              <option>A - motocikli bez ograničenja</option>
+              <option selected>B - putnički automobil</option>
+              <option>CPC - profesionalni vozači</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="poruka">Poruka (opciono)</label>
+            <textarea id="poruka" name="poruka" placeholder="Napiši nam kad ti termini najviše odgovaraju..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Pošalji upit za obuku</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Auto škola Reli - logo" class="footer-logo">
+        <p>Auto škola Reli iz Niša obučava kandidate za AM, A1, A2, A i B kategoriju i profesionalne vozače za CPC sertifikat, od 1998. godine.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Stranica</h4>
+        <a href="#kategorije">Kategorije</a>
+        <a href="#uslovi">Uslovi i lokacije</a>
+        <a href="#o-nama">O nama</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+38118241241">018/241-241</a>
+        <a href="tel:+381601811011">060/1811-011</a>
+        <a href="mailto:info@autoskolareli.rs">info@autoskolareli.rs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Auto škola Reli, Niš. Sva prava zadržana.</span>
+      <span>Obuka od 1998. godine</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var mobilePanel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('active');
+    mobilePanel.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){
+      burger.classList.remove('active');
+      mobilePanel.classList.remove('open');
+    });
+  });
+
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 40){
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  document.querySelectorAll('.reveal').forEach(function(el){
+    el.classList.add('pending');
+  });
+
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.remove('pending');
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.15});
+
+    document.querySelectorAll('.reveal').forEach(function(el){
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){
+      el.classList.remove('pending');
+    });
+  }
+</script>
+
+</body>
+</html>
