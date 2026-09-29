@@ -3,1097 +3,1311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto Škola Reli Niš - Obuka za AM, A1, A2, A i B kategoriju</title>
-<meta name="description" content="Auto škola Reli iz Niša - obuka kandidata za vozače od 1998. godine. Kategorije AM, A1, A2, A, B i CPC sertifikat za profesionalne vozače.">
+<title>Auto škola Reli Niš - AM, A1, A2, A, B kategorija i CPC centar</title>
+<meta name="description" content="Auto škola Reli iz Niša, od 1998. godine. Obuka za AM, A1, A2, A i B kategoriju na dve lokacije sa učionicom i CPC centar za profesionalne vozače.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wdth,wght@0,75..125,400..900;1,75..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --accent:#ca0005;
-    --accent-dark:#8f0004;
-    --accent-darker:#5e0003;
-    --accent-soft:rgba(202,0,5,0.07);
-    --accent-soft-2:rgba(202,0,5,0.14);
-    --accent-glow:rgba(202,0,5,0.28);
+    --red:#ca0005;
+    --red-600:#a80004;
+    --red-800:#5c0206;
+    --red-900:#3a0104;
+    --red-soft:rgba(202,0,5,.08);
+    --red-soft-2:rgba(202,0,5,.16);
+    --red-glow:rgba(202,0,5,.44);
 
-    --text:rgba(20,17,17,0.92);
-    --text-muted:rgba(20,17,17,0.65);
-    --text-faint:rgba(20,17,17,0.45);
+    --ink:#161212;
+    --carbon:#0f0c0c;
+    --carbon-2:#1b1616;
+    --paper:#f6f3f2;
+    --white:#fff;
 
-    --bg:#ffffff;
-    --bg-off:#fbf8f8;
-    --border-soft:rgba(202,0,5,0.14);
+    --text:rgba(22,18,18,.94);
+    --text-muted:rgba(22,18,18,.68);
+    --text-faint:rgba(22,18,18,.44);
+    --line:rgba(22,18,18,.12);
 
-    --radius-btn:8px;
-    --radius-card:20px;
+    --on-dark:#fff;
+    --on-dark-muted:rgba(255,255,255,.72);
+    --on-dark-faint:rgba(255,255,255,.44);
+    --line-dark:rgba(255,255,255,.14);
+
+    --r-card:8px;
+    --r-lg:16px;
+    --sec:128px;
+
+    --f-head:'Saira',sans-serif;
+    --f-body:'Inter',sans-serif;
+    --check:conic-gradient(var(--ink) 25%,#fff 0 50%,var(--ink) 0 75%,#fff 0);
   }
+  @media (max-width:768px){ :root{--sec:80px;} }
 
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Roboto',sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.65;
-    font-weight:400;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{
-    font-family:'Poppins',sans-serif;
-    color:var(--text);
-    line-height:1.15;
-    font-weight:700;
-  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;}
+  body{margin:0;font-family:var(--f-body);font-size:16px;line-height:1.6;color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:var(--f-head);margin:0;line-height:1.08;text-wrap:balance;color:inherit;}
+  p{margin:0;text-wrap:pretty;}
+  li,summary,figcaption,blockquote{text-wrap:balance;}
   a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  ul{list-style:none;}
-  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  img{display:block;max-width:100%;height:auto;}
+  ul,ol{margin:0;padding:0;list-style:none;}
+  button,input,select,textarea{font:inherit;color:inherit;}
+  .s{display:block;text-wrap:balance;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
 
-  .wrap{
-    max-width:1280px;
-    margin:0 auto;
-    padding-left:24px;
-    padding-right:24px;
-  }
-  @media (max-width:768px){
-    .wrap{padding-left:20px;padding-right:20px;}
-  }
+  .wrap{max-width:1280px;margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px;}
+  @media (max-width:768px){ .wrap{padding-left:20px;padding-right:20px;} }
 
-  section{padding-top:96px;padding-bottom:96px;}
-  @media (max-width:768px){
-    section{padding-top:64px;padding-bottom:64px;}
-  }
+  .section{padding-top:var(--sec);padding-bottom:var(--sec);position:relative;}
+  .paper{background:var(--paper);}
+  .dark{background:var(--carbon);color:var(--on-dark);}
 
-  p{max-width:65ch;}
+  /* ===== TAG / HEADINGS ===== */
+  .tag{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-head);font-weight:700;font-size:12px;line-height:1;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+  .tag::before{content:"";width:16px;height:16px;background:var(--check);background-size:8px 8px;transform:skewX(-12deg);flex:none;}
+  .tag .n{color:var(--text-faint);}
+  .dark .tag,.on-red .tag{color:#fff;}
+  .dark .tag .n,.on-red .tag .n{color:var(--on-dark-faint);}
+  .dark .tag::before,.on-red .tag::before{--ink:#fff;background:conic-gradient(#fff 25%,transparent 0 50%,#fff 0 75%,transparent 0);background-size:8px 8px;}
 
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:'Poppins',sans-serif;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:16px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:18px;
-    height:2px;
-    background:var(--accent);
-    display:inline-block;
-  }
+  .h2{font-size:clamp(28px,calc(4.4vw + 12px),56px);font-weight:800;font-style:italic;font-stretch:82%;text-transform:uppercase;letter-spacing:-.004em;}
+  .h2 em{font-style:inherit;color:var(--red);}
+  .dark .h2 em{color:#ff3b3f;}
+  .lead{font-size:20px;line-height:1.5;color:var(--text-muted);margin-top:24px;max-width:60ch;}
+  .dark .lead,.on-red .lead{color:var(--on-dark-muted);}
+  .head{max-width:760px;margin-bottom:64px;}
+  .head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .head.center .lead{margin-left:auto;margin-right:auto;}
+  @media (max-width:768px){ .lead{font-size:16px;margin-top:16px;} .head{margin-bottom:40px;} }
 
-  /* ===== BUTTONS ===== */
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:15px 28px;
-    border-radius:var(--radius-btn);
-    font-family:'Poppins',sans-serif;
-    font-weight:600;
-    font-size:15px;
-    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    white-space:nowrap;
-  }
-  .btn-primary{
-    background:var(--accent);
-    color:#fff;
-    box-shadow:0 8px 24px -8px var(--accent-glow);
-  }
-  .btn-primary:hover{
-    background:var(--accent-dark);
-    transform:translateY(-2px);
-    box-shadow:0 14px 30px -10px var(--accent-glow);
-  }
-  .btn-outline{
-    background:transparent;
-    color:var(--text);
-    border:1.5px solid rgba(20,17,17,0.18);
-  }
-  .btn-outline:hover{
-    border-color:var(--accent);
-    color:var(--accent-dark);
-  }
-  .btn-block{width:100%;}
+  /* ===== BUTTONS (jedan oblik, skos kao na livreji) ===== */
+  .btn{--bg:var(--red);--fg:#fff;--bd:var(--red);display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding-left:32px;padding-right:32px;background:var(--bg);color:var(--fg);border:2px solid var(--bd);transform:skewX(-12deg);font-family:var(--f-head);font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;cursor:pointer;position:relative;overflow:hidden;transition:background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,translate .2s ease;}
+  .btn>span,.btn>svg{transform:skewX(12deg);position:relative;z-index:1;}
+  .btn svg{width:20px;height:20px;flex:none;}
+  .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.34) 50%,transparent 70%);translate:-120% 0;transition:translate .6s ease;}
+  .btn:hover::after{translate:120% 0;}
+  .btn:hover{--bg:var(--red-600);--bd:var(--red-600);box-shadow:0 16px 32px -16px var(--red-glow);translate:0 -2px;}
+  .btn.ghost{--bg:transparent;--fg:var(--text);--bd:rgba(22,18,18,.24);}
+  .btn.ghost:hover{--bg:var(--ink);--fg:#fff;--bd:var(--ink);box-shadow:none;}
+  .dark .btn.ghost,.on-red .btn.ghost,.hero .btn.ghost{--fg:#fff;--bd:rgba(255,255,255,.36);}
+  .dark .btn.ghost:hover,.on-red .btn.ghost:hover,.hero .btn.ghost:hover{--bg:#fff;--fg:var(--ink);--bd:#fff;}
+  .btn.block{width:100%;}
+  .btn:focus-visible{outline:3px solid var(--red);outline-offset:4px;}
+
+  /* ===== TOPBAR ===== */
+  .topbar{background:var(--carbon);color:var(--on-dark-muted);font-size:12px;letter-spacing:.02em;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:40px;}
+  .topbar .tb-loc{display:flex;gap:32px;}
+  .topbar span b{color:#fff;font-weight:600;}
+  .topbar a:hover{color:#fff;}
+  @media (max-width:991px){ .topbar .mail{display:none;} }
+  @media (max-width:768px){ .topbar{display:none;} }
 
   /* ===== HEADER ===== */
-  header{
-    position:sticky;
-    top:0;
-    left:0;
-    right:0;
-    z-index:100;
-    background:#fff;
-    border-bottom:1px solid rgba(20,17,17,0.08);
-    transition:backdrop-filter .2s ease, background .2s ease;
-  }
-  header.scrolled{
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(12px);
-  }
-  .nav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    height:84px;
-  }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .logo img{height:42px;width:auto;}
-  .nav-links{
-    display:flex;
-    align-items:center;
-    gap:36px;
-  }
-  .nav-links a{
-    font-family:'Poppins',sans-serif;
-    font-weight:500;
-    font-size:15px;
-    color:var(--text);
-    position:relative;
-    padding-bottom:4px;
-  }
-  .nav-links a:hover{color:var(--accent);}
-  .nav-cta-desktop{display:flex;align-items:center;gap:20px;}
-
-  .burger{
-    display:none;
-    width:40px;
-    height:40px;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    gap:5px;
-  }
-  .burger span{
-    display:block;
-    width:24px;
-    height:2px;
-    background:var(--text);
-    transition:transform .2s ease, opacity .2s ease;
-  }
-  .burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:background .2s ease;}
+  .site-header.scrolled{background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:80px;}
+  .logo img{height:44px;width:auto;}
+  .nav-links{display:flex;gap:32px;}
+  .nav-links a{font-family:var(--f-head);font-weight:600;font-size:16px;letter-spacing:.04em;text-transform:uppercase;position:relative;padding-top:4px;padding-bottom:4px;}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--red);transform:scaleX(0) skewX(-20deg);transform-origin:left;transition:transform .25s ease;}
+  .nav-links a:hover::after{transform:scaleX(1) skewX(-20deg);}
+  .nav-right{display:flex;align-items:center;gap:24px;}
+  .nav-tel{font-family:var(--f-head);font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;}
+  .nav-tel svg{width:20px;height:20px;stroke:var(--red);}
+  .nav .btn{min-height:48px;padding-left:24px;padding-right:24px;}
+  .burger{display:none;width:48px;height:48px;border:0;background:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:transform .2s ease,opacity .2s ease;}
+  .burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
   .burger.active span:nth-child(2){opacity:0;}
-  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-  .mobile-panel{
-    display:none;
-    flex-direction:column;
-    background:#fff;
-    border-top:1px solid rgba(20,17,17,0.08);
-    padding-top:12px;
-    padding-bottom:24px;
-  }
-  .mobile-panel.open{display:flex;}
-  .mobile-panel a{
-    font-family:'Poppins',sans-serif;
-    font-weight:500;
-    font-size:16px;
-    padding:14px 0;
-    border-bottom:1px solid rgba(20,17,17,0.06);
-  }
-  .mobile-panel .btn{margin-top:16px;}
-
-  @media (max-width:991px){
-    .nav-links,.nav-cta-desktop{display:none;}
-    .burger{display:flex;}
-  }
+  .burger.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+  .mobile-panel{display:none;border-top:1px solid var(--line);background:#fff;}
+  .mobile-panel.open{display:block;}
+  .mobile-panel .wrap{display:flex;flex-direction:column;padding-top:8px;padding-bottom:24px;}
+  .mobile-panel a:not(.btn){font-family:var(--f-head);font-weight:600;font-size:20px;text-transform:uppercase;padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .mobile-panel .btn{margin-top:24px;}
+  @media (max-width:991px){ .nav-links,.nav-right{display:none;} .burger{display:flex;} }
 
   /* ===== HERO ===== */
-  .hero{
-    position:relative;
-    padding-top:100px;
-    padding-bottom:100px;
-    background:linear-gradient(180deg, var(--bg-off) 0%, #fff 100%);
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    top:-200px;
-    right:-200px;
-    width:600px;
-    height:600px;
-    background:radial-gradient(circle, var(--accent-soft-2) 0%, transparent 70%);
-    pointer-events:none;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:56px;
-    align-items:center;
-    position:relative;
-    z-index:2;
-  }
-  .hero h1{
-    font-size:clamp(34px, 5vw, 58px);
-    font-weight:800;
-    margin-bottom:22px;
-    letter-spacing:-0.01em;
-  }
-  .hero h1 span{color:var(--accent);}
-  .hero p.lead{
-    font-size:18px;
-    color:var(--text-muted);
-    margin-bottom:32px;
-    max-width:52ch;
-  }
-  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;}
-  .hero-badges{
-    display:flex;
-    gap:28px;
-    margin-top:40px;
-    flex-wrap:wrap;
-  }
-  .hero-badge{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Poppins',sans-serif;
-    font-weight:600;
-    font-size:14px;
-    color:var(--text-muted);
-  }
-  .hero-badge svg{width:20px;height:20px;flex-shrink:0;}
+  .hero{background:var(--carbon);color:#fff;position:relative;overflow:hidden;padding-top:112px;padding-bottom:136px;}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(640px 480px at 78% 30%,rgba(202,0,5,.34),transparent 70%),radial-gradient(480px 400px at 0% 100%,rgba(202,0,5,.14),transparent 70%);pointer-events:none;}
+  .hero::after{content:"";position:absolute;right:-40px;top:0;bottom:0;width:120px;background:conic-gradient(rgba(255,255,255,.07) 25%,transparent 0 50%,rgba(255,255,255,.07) 0 75%,transparent 0);background-size:40px 40px;transform:skewX(-12deg);-webkit-mask:linear-gradient(90deg,transparent,#000);mask:linear-gradient(90deg,transparent,#000);pointer-events:none;}
+  .hero-grid{display:grid;grid-template-columns:1fr 1.04fr;gap:64px;align-items:center;position:relative;z-index:2;}
+  .hero-text{container-type:inline-size;min-width:0;}
+  .hero .tag{color:#fff;}
+  .hero .tag::before{background:conic-gradient(#fff 25%,var(--red) 0 50%,#fff 0 75%,var(--red) 0);background-size:8px 8px;}
+  .hero h1{font-size:clamp(40px,8vw,88px);font-size:clamp(40px,19cqi,112px);font-weight:900;font-style:italic;font-stretch:78%;text-transform:uppercase;line-height:.98;letter-spacing:-.006em;}
+  .hero h1 .ln{display:block;white-space:nowrap;}
+  .hero h1 em{font-style:inherit;color:transparent;-webkit-text-stroke:2px #fff;}
+  .hero h1 .red{color:var(--red);-webkit-text-stroke:0;text-shadow:0 0 40px rgba(202,0,5,.5);}
+  .hero .lead{color:var(--on-dark-muted);margin-top:32px;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px;}
+  .hero-points{display:flex;flex-wrap:wrap;gap:32px;margin-top:48px;padding-top:32px;border-top:1px solid var(--line-dark);}
+  .hero-points li{display:flex;align-items:center;gap:12px;}
+  .hero-points b{font-family:var(--f-head);font-style:italic;font-weight:800;font-size:32px;line-height:1;color:#fff;font-stretch:82%;}
+  .hero-points span{font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dark-muted);}
 
-  .hero-media{
-    position:relative;
-    border-radius:var(--radius-card);
-    overflow:hidden;
-    box-shadow:0 30px 60px -30px rgba(20,17,17,0.35);
-  }
-  .hero-media img{width:100%;height:460px;object-fit:cover;}
-  .hero-media-tag{
-    position:absolute;
-    bottom:20px;
-    left:20px;
-    background:rgba(255,255,255,0.94);
-    backdrop-filter:blur(6px);
-    padding:14px 18px;
-    border-radius:12px;
-    font-family:'Poppins',sans-serif;
-    font-weight:700;
-    font-size:14px;
-    color:var(--accent-dark);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .hero-media-tag svg{width:18px;height:18px;}
+  .hero-visual{position:relative;padding-left:40px;}
+  .hv-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:5/4;background:var(--carbon-2);clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);animation:hvReveal 1s cubic-bezier(.7,0,.2,1) 2.1s both;}
+  .hv-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 55%;transform:scale(1.08);animation:hvZoom 2.4s cubic-bezier(.2,.7,.2,1) 2.1s both;}
+  .hv-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,12,12,.6));pointer-events:none;}
+  .hv-glint{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2;}
+  .hv-glint::before{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:36%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-160%) skewX(-16deg);animation:glint 10s ease-in-out 4.2s infinite;}
+  .hv-speed{position:absolute;inset:0;pointer-events:none;z-index:3;}
+  .hv-speed i{position:absolute;left:0;height:2px;width:40%;background:linear-gradient(90deg,transparent,#fff);opacity:0;animation:speed .7s cubic-bezier(.5,0,.3,1) both;}
+  .hv-speed i:nth-child(1){top:24%;animation-delay:2.05s;}
+  .hv-speed i:nth-child(2){top:48%;animation-delay:2.15s;background:linear-gradient(90deg,transparent,var(--red));height:4px;}
+  .hv-speed i:nth-child(3){top:64%;animation-delay:2.1s;width:28%;}
+  .hv-speed i:nth-child(4){top:82%;animation-delay:2.22s;background:linear-gradient(90deg,transparent,var(--red));}
+  .hv-flag{position:absolute;left:56px;right:32px;bottom:-16px;height:32px;background:var(--check);background-size:16px 16px;transform:skewX(-12deg) scaleX(0);transform-origin:left;animation:flagIn .7s cubic-bezier(.7,0,.2,1) 2.6s both;z-index:4;box-shadow:0 12px 24px -12px rgba(0,0,0,.6);}
+
+  .semafor{position:absolute;left:0;top:40px;z-index:5;width:80px;padding-top:16px;padding-bottom:16px;background:linear-gradient(180deg,#232020,#131010);border:1px solid rgba(255,255,255,.12);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 24px 48px -16px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.08);}
+  .semafor::before{content:"";position:absolute;left:50%;bottom:100%;width:8px;height:40px;background:#232020;transform:translateX(-50%);}
+  .semafor .l{width:48px;height:48px;border-radius:50%;position:relative;background:#2a2222;box-shadow:inset 0 4px 8px rgba(0,0,0,.6);}
+  .semafor .l::after{content:"";position:absolute;inset:0;border-radius:50%;opacity:0;}
+  .semafor .l.r::after{background:radial-gradient(circle at 40% 36%,#ff8d8f,#ff1a1f 40%,#b00004);box-shadow:0 0 24px 4px rgba(255,26,31,.7);animation:lightR 2.1s steps(1,end) both;}
+  .semafor .l.y::after{background:radial-gradient(circle at 40% 36%,#ffe3a1,#ffb300 40%,#b37100);box-shadow:0 0 24px 4px rgba(255,179,0,.6);animation:lightY 2.1s steps(1,end) both;}
+  .semafor .l.g::after{background:radial-gradient(circle at 40% 36%,#b9ffc9,#1ed760 40%,#0b8a3a);box-shadow:0 0 24px 4px rgba(30,215,96,.6);animation:lightG 2.1s steps(1,end) forwards,greenPulse 10s ease-in-out 4.2s infinite;}
+  .semafor small{font-family:var(--f-head);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--on-dark-faint);text-transform:uppercase;line-height:1;margin-top:4px;}
+
+  .hv-card{position:absolute;right:-16px;top:-24px;z-index:5;display:flex;align-items:center;gap:12px;background:#fff;color:var(--ink);padding-top:12px;padding-bottom:12px;padding-left:12px;padding-right:20px;border-radius:var(--r-card);box-shadow:0 24px 48px -20px rgba(0,0,0,.6);animation:pop .6s cubic-bezier(.2,.8,.2,1.2) 2.9s both;}
+  .hv-card img{width:72px;height:56px;object-fit:cover;border-radius:4px;}
+  .hv-card b{display:block;font-family:var(--f-head);font-weight:800;font-style:italic;font-size:20px;line-height:1.1;text-transform:uppercase;}
+  .hv-card span{font-size:12px;color:var(--text-muted);}
+  .hv-badge{position:absolute;left:72px;bottom:48px;z-index:5;background:var(--red);color:#fff;transform:skewX(-12deg);padding-top:8px;padding-bottom:8px;padding-left:20px;padding-right:20px;font-family:var(--f-head);font-weight:800;font-style:italic;font-size:20px;text-transform:uppercase;letter-spacing:.04em;animation:pop .6s cubic-bezier(.2,.8,.2,1.2) 3.05s both;box-shadow:0 16px 32px -12px var(--red-glow);}
+  .hv-badge span{display:inline-block;transform:skewX(12deg);}
+
+  @keyframes lightR{0%{opacity:0}20%{opacity:1}100%{opacity:0}}
+  @keyframes lightY{0%{opacity:0}57%{opacity:1}100%{opacity:0}}
+  @keyframes lightG{0%{opacity:0}100%{opacity:1}}
+  @keyframes greenPulse{0%,86%,100%{filter:none}90%{filter:brightness(1.5)}}
+  @keyframes hvReveal{from{clip-path:polygon(8% 0,8% 0,0 100%,0 100%)}to{clip-path:polygon(8% 0,100% 0,100% 100%,0 100%)}}
+  @keyframes hvZoom{to{transform:scale(1)}}
+  @keyframes speed{0%{opacity:0;transform:translateX(-100%)}30%{opacity:1}100%{opacity:0;transform:translateX(260%)}}
+  @keyframes flagIn{to{transform:skewX(-12deg) scaleX(1)}}
+  @keyframes pop{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
+  @keyframes glint{0%{transform:translateX(-160%) skewX(-16deg)}14%,100%{transform:translateX(360%) skewX(-16deg)}}
 
   @media (max-width:991px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-media img{height:320px;}
+    .hero{padding-top:64px;padding-bottom:88px;}
+    .hero-grid{grid-template-columns:1fr;gap:64px;}
+    .hero-visual{padding-left:48px;}
+  }
+  @media (max-width:560px){
+    .hero-visual{padding-left:0;padding-top:0;}
+    .semafor{left:auto;right:12px;top:auto;bottom:40px;width:56px;gap:8px;padding-top:12px;padding-bottom:12px;border-radius:12px;}
+    .semafor::before{display:none;}
+    .semafor .l{width:32px;height:32px;}
+    .semafor small{display:none;}
+    .hv-card{right:8px;top:-20px;}
+    .hv-card img{width:56px;height:44px;}
+    .hv-card b{font-size:16px;}
+    .hv-badge{left:16px;bottom:36px;font-size:16px;}
+    .hv-flag{left:24px;right:16px;height:24px;background-size:12px 12px;bottom:-12px;}
+    .hero-points{gap:24px;}
   }
 
-  /* ===== PAIN SECTION ===== */
-  .pain{
-    background:var(--bg-off);
-    border-top:1px solid rgba(20,17,17,0.06);
-    border-bottom:1px solid rgba(20,17,17,0.06);
+  /* ===== TICKER ===== */
+  .ticker{background:var(--red);color:#fff;overflow:hidden;position:relative;z-index:3;margin-top:-24px;transform:skewY(-1.2deg);box-shadow:0 16px 32px -16px var(--red-glow);}
+  .ticker-track{display:flex;width:max-content;animation:tick 36s linear infinite;padding-top:16px;padding-bottom:16px;transform:skewY(1.2deg);}
+  .ticker-track span{font-family:var(--f-head);font-weight:800;font-style:italic;font-size:24px;text-transform:uppercase;letter-spacing:.04em;padding-left:24px;padding-right:24px;display:flex;align-items:center;gap:48px;white-space:nowrap;}
+  .ticker-track span::after{content:"";width:24px;height:24px;background:conic-gradient(#fff 25%,var(--red-800) 0 50%,#fff 0 75%,var(--red-800) 0);background-size:12px 12px;transform:skewX(-12deg);}
+  @keyframes tick{to{transform:skewY(1.2deg) translateX(-50%)}}
+
+  /* ===== STATS ===== */
+  .stats{padding-top:var(--sec);padding-bottom:var(--sec);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);}
+  .stat{padding-top:32px;padding-right:24px;position:relative;}
+  .stat+.stat{padding-left:32px;border-left:1px solid var(--line);}
+  .stat .num{font-family:var(--f-head);font-weight:900;font-style:italic;font-stretch:78%;font-size:clamp(48px,6vw,80px);line-height:.9;color:var(--ink);display:flex;align-items:baseline;gap:4px;}
+  .stat .num small{font-size:.44em;color:var(--red);font-stretch:90%;}
+  .stat p{margin-top:16px;font-size:16px;color:var(--text-muted);max-width:26ch;}
+  .stat .kicker{position:absolute;top:-2px;left:0;width:48px;height:4px;background:var(--red);transform:skewX(-20deg);}
+  .stat+.stat .kicker{left:32px;}
+  @media (max-width:991px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:48px;}
+    .stat:nth-child(3){padding-left:0;border-left:0;}
+    .stat:nth-child(3) .kicker{left:0;}
   }
-  .pain-inner{
-    max-width:820px;
-  }
-  .pain h2{
-    font-size:clamp(24px,3vw,32px);
-    margin-bottom:20px;
-  }
-  .pain p{
-    font-size:17px;
-    color:var(--text-muted);
-    margin-bottom:14px;
-    max-width:70ch;
+  @media (max-width:480px){
+    .stats-grid{grid-template-columns:1fr;row-gap:32px;}
+    .stat+.stat{padding-left:0;border-left:0;border-top:1px solid var(--line);}
+    .stat+.stat .kicker{left:0;}
   }
 
-  /* ===== SECTION HEADS ===== */
-  .section-head{
-    max-width:640px;
-    margin-bottom:56px;
-  }
-  .section-head h2{
-    font-size:clamp(28px,4vw,40px);
-  }
-  .section-head p{
-    color:var(--text-muted);
-    font-size:17px;
-    margin-top:16px;
-  }
+  /* ===== ZASTO ===== */
+  .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:stretch;}
+  .why-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:480px;}
+  .why-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;}
+  .why-photo figcaption{position:absolute;left:24px;right:24px;bottom:24px;background:rgba(15,12,12,.84);color:#fff;padding-top:16px;padding-bottom:16px;padding-left:20px;padding-right:20px;border-left:4px solid var(--red);font-size:16px;line-height:1.5;}
+  .why-photo figcaption b{display:block;font-family:var(--f-head);font-style:italic;font-weight:800;font-size:20px;text-transform:uppercase;}
+  .why-cards{display:grid;grid-template-columns:1fr;gap:16px;}
+  .why-card{display:grid;grid-template-columns:48px 1fr;column-gap:24px;border:1px solid var(--line);border-radius:var(--r-card);padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px;background:#fff;position:relative;overflow:hidden;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;}
+  .why-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .35s ease;}
+  .why-card:hover{border-color:transparent;box-shadow:0 24px 48px -28px rgba(22,18,18,.36);transform:translateX(4px);}
+  .why-card:hover::before{transform:scaleY(1);}
+  .why-card .ico{width:48px;height:48px;border-radius:8px;background:var(--red-soft);display:flex;align-items:center;justify-content:center;grid-row:span 2;}
+  .why-card .ico svg{width:24px;height:24px;stroke:var(--red);}
+  .why-card h3{font-size:24px;font-weight:800;font-style:italic;font-stretch:85%;text-transform:uppercase;margin-bottom:8px;align-self:center;}
+  .why-card p{font-size:16px;color:var(--text-muted);}
+  @media (max-width:991px){ .why-grid{grid-template-columns:1fr;} .why-photo{min-height:360px;} }
+  @media (max-width:600px){ .why-card{grid-template-columns:1fr;row-gap:16px;padding-left:24px;padding-right:24px;} .why-card .ico{grid-row:auto;} }
 
   /* ===== KATEGORIJE ===== */
-  .cat-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-  }
-  .cat-card{
-    border:1px solid rgba(20,17,17,0.08);
-    border-radius:var(--radius-card);
-    padding:32px 28px;
-    background:#fff;
-    transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
-    opacity:1;
-  }
-  .cat-card:hover{
-    box-shadow:0 24px 48px -28px rgba(20,17,17,0.22);
-    transform:translateY(-4px);
-    border-color:var(--border-soft);
-  }
-  .cat-icon{
-    width:52px;
-    height:52px;
-    border-radius:14px;
-    background:var(--accent-soft);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:22px;
-  }
-  .cat-icon svg{width:26px;height:26px;stroke:var(--accent);}
-  .cat-card h3{
-    font-size:20px;
-    margin-bottom:6px;
-  }
-  .cat-card .cat-age{
-    font-family:'Poppins',sans-serif;
-    font-weight:600;
-    font-size:13px;
-    color:var(--accent-dark);
-    text-transform:uppercase;
-    letter-spacing:0.04em;
-    margin-bottom:14px;
-    display:block;
-  }
-  .cat-card p{
-    color:var(--text-muted);
-    font-size:15px;
-  }
-
-  @media (max-width:991px){
-    .cat-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  @media (max-width:600px){
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .cat{background:#fff;border-radius:var(--r-card);border:1px solid var(--line);padding-top:32px;padding-bottom:32px;padding-left:32px;padding-right:32px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:box-shadow .25s ease,transform .25s ease;}
+  .cat:hover{box-shadow:0 28px 56px -32px rgba(22,18,18,.4);transform:translateY(-4px);}
+  .cat-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px;}
+  .plate{min-width:88px;height:72px;padding-left:16px;padding-right:16px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;transform:skewX(-12deg);font-family:var(--f-head);font-weight:900;font-style:italic;font-size:48px;line-height:1;position:relative;transition:background .25s ease;}
+  .plate span{transform:skewX(12deg);}
+  .plate::after{content:"";position:absolute;right:-12px;top:0;bottom:0;width:12px;background:var(--check);background-size:6px 6px;}
+  .cat:hover .plate{background:var(--red);}
+  .cat .ages{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);text-align:right;}
+  .cat .ages b{font-family:var(--f-head);font-size:20px;letter-spacing:0;color:var(--ink);font-style:italic;}
+  .cat h3{font-size:24px;font-weight:800;font-stretch:88%;margin-bottom:8px;}
+  .cat p{font-size:16px;color:var(--text-muted);}
+  .cat .veh{margin-top:24px;padding-top:16px;border-top:1px dashed var(--line);display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;}
+  .cat .veh svg{width:24px;height:24px;stroke:var(--red);flex:none;}
+  .cat .go{margin-top:auto;padding-top:24px;font-family:var(--f-head);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);display:inline-flex;align-items:center;gap:8px;}
+  .cat .go svg{width:20px;height:20px;transition:transform .2s ease;}
+  .cat .go:hover svg{transform:translateX(4px);}
+  .cat.feature{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:0;}
+  .cat.feature .cat-body{padding-top:32px;padding-bottom:32px;padding-left:32px;display:flex;flex-direction:column;}
+  .cat.feature .cat-img{position:relative;min-height:320px;overflow:hidden;}
+  .cat.feature .cat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 50%;transition:transform .8s ease;}
+  .cat.feature:hover .cat-img img{transform:scale(1.04);}
+  .cat.feature .cat-img::before{content:"Najtraženija";position:absolute;top:24px;right:24px;z-index:2;background:var(--red);color:#fff;font-family:var(--f-head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:16px;padding-top:4px;padding-bottom:4px;padding-left:16px;padding-right:16px;transform:skewX(-12deg);}
+  @media (max-width:1199px){ .cat-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:700px){
     .cat-grid{grid-template-columns:1fr;}
+    .cat.feature{grid-column:auto;grid-template-columns:1fr;gap:0;}
+    .cat.feature .cat-img{min-height:240px;order:-1;}
+    .cat.feature .cat-body{padding-right:32px;}
+  }
+  @media (max-width:400px){ .cat,.cat.feature .cat-body{padding-left:24px;padding-right:24px;} }
+
+  /* ===== PAKET (kalkulator) ===== */
+  .pkg{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;}
+  .pkg-form{display:flex;flex-direction:column;gap:40px;position:sticky;top:112px;}
+  .pkg-step h3{font-family:var(--f-head);font-size:16px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+  .pkg-step h3 i{font-style:normal;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;transform:skewX(-12deg);font-size:16px;letter-spacing:0;}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;}
+  .chip{border:2px solid var(--line);background:#fff;min-height:56px;min-width:72px;padding-left:20px;padding-right:20px;cursor:pointer;font-family:var(--f-head);font-weight:800;font-style:italic;font-size:20px;text-transform:uppercase;transform:skewX(-12deg);transition:background .2s ease,border-color .2s ease,color .2s ease;}
+  .chip>span{display:inline-block;transform:skewX(12deg);}
+  .chip.sm{font-size:16px;font-style:normal;font-weight:700;min-width:0;}
+  .chip:hover{border-color:var(--ink);}
+  .chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff;}
+  .chip:focus-visible{outline:3px solid var(--red);outline-offset:3px;}
+  .pkg-note{font-size:16px;color:var(--text-muted);border-left:4px solid var(--red);padding-left:16px;}
+
+  .ticket{background:var(--carbon);color:#fff;border-radius:var(--r-lg);overflow:hidden;position:relative;box-shadow:0 40px 80px -40px rgba(22,18,18,.6);}
+  .ticket::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:conic-gradient(#fff 25%,var(--carbon) 0 50%,#fff 0 75%,var(--carbon) 0);background-size:16px 16px;opacity:.9;}
+  .ticket-head{padding-top:48px;padding-left:40px;padding-right:40px;padding-bottom:32px;border-bottom:1px dashed var(--line-dark);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;}
+  .ticket-head small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-faint);}
+  .ticket-head h3{font-size:40px;font-weight:900;font-style:italic;font-stretch:80%;text-transform:uppercase;line-height:1;margin-top:8px;}
+  .ticket-head h3 span{color:#ff3b3f;}
+  .save{background:var(--red);color:#fff;font-family:var(--f-head);font-weight:700;font-size:16px;padding-top:4px;padding-bottom:4px;padding-left:12px;padding-right:12px;transform:skewX(-12deg);white-space:nowrap;}
+  .save[hidden]{display:none;}
+  .ticket-body{padding-top:32px;padding-left:40px;padding-right:40px;padding-bottom:40px;}
+  .gauge{margin-bottom:28px;}
+  .gauge-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+  .gauge-top span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);}
+  .gauge-top b{font-family:var(--f-head);font-weight:900;font-style:italic;font-size:48px;line-height:1;font-stretch:80%;}
+  .gauge-top b small{font-size:16px;font-style:normal;font-weight:600;color:var(--on-dark-muted);margin-left:8px;letter-spacing:.04em;}
+  .bars{display:grid;grid-template-columns:repeat(40,1fr);gap:2px;height:24px;}
+  .bars i{background:rgba(255,255,255,.1);transform:skewX(-16deg);transition:background .25s ease;}
+  .bars i.on{background:var(--red);}
+  .bars.t i.on{background:#fff;}
+  .route{margin-top:12px;display:grid;gap:0;counter-reset:st;}
+  .route li{display:grid;grid-template-columns:32px 1fr;gap:16px;align-items:start;padding-top:12px;padding-bottom:12px;border-top:1px solid var(--line-dark);font-size:16px;color:var(--on-dark-muted);}
+  .route li::before{counter-increment:st;content:counter(st);font-family:var(--f-head);font-weight:800;font-style:italic;color:#fff;font-size:20px;line-height:1.2;}
+  .route li b{color:#fff;font-weight:600;}
+  .meta-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;}
+  .meta-row div{background:rgba(255,255,255,.06);border-radius:var(--r-card);padding-top:16px;padding-bottom:16px;padding-left:20px;padding-right:20px;}
+  .meta-row small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-faint);margin-bottom:4px;}
+  .meta-row b{font-weight:600;font-size:16px;}
+  .price{margin-top:32px;padding-top:32px;border-top:1px dashed var(--line-dark);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .price small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-faint);}
+  .price .amount{font-family:var(--f-head);font-weight:900;font-style:italic;font-size:40px;line-height:1.1;text-transform:uppercase;font-stretch:80%;}
+  .price p{font-size:16px;color:var(--on-dark-muted);max-width:32ch;margin-top:4px;}
+  .price .acts{display:flex;flex-direction:column;align-items:stretch;gap:12px;}
+  .price .acts a.tel{font-size:16px;color:var(--on-dark-muted);text-align:center;}
+  .price .acts a.tel b{color:#fff;}
+  @media (max-width:991px){ .pkg{grid-template-columns:1fr;} .pkg-form{position:static;} }
+  @media (max-width:600px){
+    .ticket-head,.ticket-body{padding-left:24px;padding-right:24px;}
+    .ticket-head h3{font-size:32px;}
+    .meta-row{grid-template-columns:1fr;gap:12px;}
+    .price .acts{width:100%;}
+    .bars{height:20px;gap:1px;}
+    .chips{gap:8px;}
+    .chip{min-width:56px;padding-left:12px;padding-right:12px;min-height:48px;}
   }
 
-  .cpc-banner{
-    margin-top:32px;
-    border-radius:var(--radius-card);
-    background:var(--accent);
-    color:#fff;
-    padding:40px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:24px;
-    flex-wrap:wrap;
-  }
-  .cpc-banner h3{color:#fff;font-size:22px;margin-bottom:8px;}
-  .cpc-banner p{color:rgba(255,255,255,0.88);max-width:60ch;}
-  .cpc-banner .btn-outline{
-    border-color:rgba(255,255,255,0.5);
-    color:#fff;
-    flex-shrink:0;
-  }
-  .cpc-banner .btn-outline:hover{
-    border-color:#fff;
-    background:rgba(255,255,255,0.12);
-    color:#fff;
-  }
-
-  /* ===== INFO / USLOVI-LOKACIJE ===== */
-  .info-section{background:var(--bg-off);}
-  .info-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-  }
-  .info-card{
-    background:#fff;
-    border-radius:var(--radius-card);
-    padding:32px;
-    border:1px solid rgba(20,17,17,0.08);
-  }
-  .info-card h3{
-    font-size:19px;
-    margin-bottom:18px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .info-card h3 svg{width:22px;height:22px;stroke:var(--accent);flex-shrink:0;}
-  .info-list li{
-    display:flex;
-    justify-content:space-between;
-    padding:11px 0;
-    border-bottom:1px solid rgba(20,17,17,0.06);
-    font-size:15px;
-  }
-  .info-list li:last-child{border-bottom:none;}
-  .info-list li span:first-child{color:var(--text-muted);}
-  .info-list li span:last-child{font-weight:600;font-family:'Poppins',sans-serif;}
-
-  .contact-mini{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    margin-top:14px;
-  }
-  .contact-mini a{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-family:'Poppins',sans-serif;
-    font-weight:600;
-    font-size:16px;
-    color:var(--text);
-    transition:color .15s ease;
-  }
-  .contact-mini a:hover{color:var(--accent-dark);}
-  .contact-mini a svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;}
-  .contact-mini .addr{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    font-size:15px;
-    color:var(--text-muted);
-  }
-  .contact-mini .addr svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;margin-top:1px;}
-
-  @media (max-width:768px){
-    .info-grid{grid-template-columns:1fr;}
+  /* ===== ROADBOOK ===== */
+  .put{overflow:clip;}
+  .put::before{content:"";position:absolute;inset:0;background:radial-gradient(560px 400px at 90% 10%,rgba(202,0,5,.22),transparent 70%);pointer-events:none;}
+  .put-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start;position:relative;}
+  .put-side{position:sticky;top:128px;}
+  .put-side .h2{font-size:clamp(32px,3.6vw,48px);}
+  .odo{margin-top:40px;display:inline-flex;flex-direction:column;gap:8px;background:#000;border:1px solid var(--line-dark);border-radius:var(--r-card);padding-top:16px;padding-bottom:16px;padding-left:24px;padding-right:24px;}
+  .odo small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-faint);}
+  .odo b{font-family:var(--f-head);font-weight:800;font-size:40px;line-height:1;letter-spacing:.08em;color:#ff3b3f;font-variant-numeric:tabular-nums;font-style:italic;}
+  .rb{position:relative;border:1px solid var(--line-dark);border-radius:var(--r-lg);background:rgba(255,255,255,.02);}
+  .rb-head{display:grid;grid-template-columns:96px 120px 1fr;border-bottom:1px solid var(--line-dark);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-faint);}
+  .rb-head span{padding-top:16px;padding-bottom:16px;padding-left:24px;}
+  .rb-head span+span{border-left:1px solid var(--line-dark);}
+  .rb-row{display:grid;grid-template-columns:96px 120px 1fr;border-bottom:1px solid var(--line-dark);transition:opacity .4s ease,background .4s ease;}
+  .rb-row:last-child{border-bottom:0;}
+  .rb-row>*{padding-top:28px;padding-bottom:28px;padding-left:24px;padding-right:24px;}
+  .rb-row>*+*{border-left:1px solid var(--line-dark);}
+  .rb-no{font-family:var(--f-head);font-weight:900;font-style:italic;font-size:40px;line-height:1;color:var(--on-dark-faint);transition:color .3s ease;}
+  .rb-no small{display:block;font-size:12px;font-style:normal;font-weight:600;letter-spacing:.16em;margin-top:8px;}
+  .rb-tulip{display:flex;align-items:center;justify-content:center;}
+  .rb-tulip svg{width:72px;height:72px;overflow:visible;}
+  .rb-tulip .road{stroke:rgba(255,255,255,.22);stroke-width:4;fill:none;stroke-linecap:round;}
+  .rb-tulip .tp{stroke:#fff;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+  .rb-tulip .dot{fill:#fff;}
+  .rb-text h3{font-size:24px;font-weight:800;font-style:italic;text-transform:uppercase;font-stretch:85%;margin-bottom:8px;}
+  .rb-text p{font-size:16px;color:var(--on-dark-muted);}
+  .rb-text .pill{display:inline-block;margin-bottom:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#fff;background:rgba(255,255,255,.1);padding-top:4px;padding-bottom:4px;padding-left:12px;padding-right:12px;border-radius:4px;}
+  .rb-row.finish .rb-tulip svg .flag{fill:url(#chk);}
+  .js .rb-row{opacity:.4;}
+  .js .rb-row .tp{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease .1s;}
+  .js .rb-row.on{opacity:1;background:rgba(202,0,5,.08);}
+  .js .rb-row.on .tp{stroke-dashoffset:0;stroke:var(--red);}
+  .js .rb-row.on .dot{fill:var(--red);}
+  .js .rb-row.on .rb-no{color:#fff;}
+  .rb-progress{position:absolute;left:-1px;top:0;width:4px;height:100%;background:transparent;overflow:hidden;border-radius:4px;}
+  .rb-progress i{display:block;width:100%;height:100%;background:var(--red);transform-origin:top;transform:scaleY(var(--p,1));}
+  @media (max-width:1100px){ .put-grid{grid-template-columns:1fr;gap:48px;} .put-side{position:static;} }
+  @media (max-width:640px){
+    .rb-head{display:none;}
+    .rb-row{grid-template-columns:72px 1fr;}
+    .rb-no{grid-row:span 2;font-size:32px;padding-left:16px;padding-right:12px;}
+    .rb-tulip{justify-content:flex-start;padding-bottom:0;border-left:1px solid var(--line-dark);}
+    .rb-tulip svg{width:56px;height:56px;}
+    .rb-text{padding-top:16px;}
+    .rb-row>*{padding-left:16px;padding-right:16px;}
   }
 
-  /* ===== O BRENDU ===== */
-  .about-grid{
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:56px;
-    align-items:center;
-  }
-  .about-media{
-    border-radius:var(--radius-card);
-    overflow:hidden;
-    box-shadow:0 30px 60px -34px rgba(20,17,17,0.3);
-  }
-  .about-media img{width:100%;height:420px;object-fit:cover;}
-  .about-text h2{
-    font-size:clamp(26px,3.6vw,36px);
-    margin-bottom:20px;
-  }
-  .about-text p{
-    color:var(--text-muted);
-    font-size:16px;
-    margin-bottom:16px;
-  }
-  .about-points{
-    margin-top:24px;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-  }
-  .about-point{
-    display:flex;
-    gap:14px;
-    align-items:flex-start;
-  }
-  .about-point svg{width:22px;height:22px;stroke:var(--accent);flex-shrink:0;margin-top:2px;}
-  .about-point strong{font-family:'Poppins',sans-serif;font-size:15px;display:block;margin-bottom:2px;}
-  .about-point span{color:var(--text-muted);font-size:14px;}
-
+  /* ===== VOZNI PARK ===== */
+  .fleet{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:240px;gap:16px;}
+  .fleet figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r-card);background:var(--paper);}
+  .fleet img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+  .fleet figure:hover img{transform:scale(1.06);}
+  .fleet figure::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);transform:translateX(-100%);transition:transform .9s ease;pointer-events:none;}
+  .fleet figure:hover::after{transform:translateX(100%);}
+  .fleet figcaption{white-space:nowrap;position:absolute;left:16px;bottom:16px;background:#fff;color:var(--ink);font-family:var(--f-head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:16px;line-height:1.2;padding-top:8px;padding-bottom:8px;padding-left:16px;padding-right:16px;transform:skewX(-12deg);z-index:2;}
+  .fleet figcaption span{display:inline-block;transform:skewX(12deg);}
+  .fleet figcaption em{font-style:normal;color:var(--red);}
+  .f1{grid-column:span 7;grid-row:span 2;}
+  .f2{grid-column:span 5;}
+  .f3{grid-column:span 5;}
+  .f4{grid-column:span 4;}
+  .f5{grid-column:span 4;}
+  .f6{grid-column:span 4;}
+  .bikes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+  .bike{border:1px solid var(--line);border-radius:var(--r-card);padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px;display:flex;gap:16px;align-items:center;}
+  .bike b{font-family:var(--f-head);font-weight:900;font-style:italic;font-size:32px;line-height:1;color:var(--red);min-width:56px;}
+  .bike span{font-size:16px;line-height:1.4;}
+  .bike small{display:block;font-size:12px;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;}
   @media (max-width:991px){
-    .about-grid{grid-template-columns:1fr;}
-    .about-media img{height:320px;}
-  }
-
-  /* ===== DOKAZI / STATS ===== */
-  .stats-section{
-    background:var(--accent-darker);
-    color:#fff;
-    position:relative;
-    overflow:hidden;
-  }
-  .stats-section::before{
-    content:"";
-    position:absolute;
-    top:-150px;
-    left:-150px;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-    pointer-events:none;
-  }
-  .stats-inner{
-    position:relative;
-    z-index:2;
-  }
-  .stats-head{max-width:640px;margin-bottom:48px;}
-  .stats-head .eyebrow{color:#fff;}
-  .stats-head .eyebrow::before{background:#fff;}
-  .stats-head h2{color:#fff;font-size:clamp(26px,3.6vw,36px);}
-  .stats-head p{color:rgba(255,255,255,0.75);margin-top:14px;}
-  .stats-row{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-  }
-  .stat-box{
-    padding:32px;
-    border:1px solid rgba(255,255,255,0.16);
-    border-radius:var(--radius-card);
-  }
-  .stat-box .num{
-    font-family:'Poppins',sans-serif;
-    font-weight:800;
-    font-size:clamp(32px,5vw,48px);
-    color:#fff;
-    line-height:1;
-    margin-bottom:10px;
-  }
-  .stat-box .label{
-    color:rgba(255,255,255,0.72);
-    font-size:15px;
+    .fleet{grid-auto-rows:200px;}
+    .f1{grid-column:span 12;}
+    .f2,.f3{grid-column:span 6;}
+    .f4,.f5,.f6{grid-column:span 4;}
+    .bikes{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:600px){
-    .stats-row{grid-template-columns:1fr;}
+    .fleet{grid-auto-rows:180px;gap:12px;}
+    .f1{grid-row:span 1;grid-column:span 12;}
+    .f2,.f3,.f4,.f5,.f6{grid-column:span 6;}
+    .f6{grid-column:span 12;}
+    .fleet figcaption{font-size:12px;left:12px;bottom:12px;padding-left:12px;padding-right:12px;}
+    .bikes{grid-template-columns:1fr;}
   }
 
-  /* ===== CTA / KONTAKT ===== */
-  .cta-section{background:var(--bg-off);}
-  .cta-grid{
-    display:grid;
-    grid-template-columns:1fr 1.1fr;
-    gap:56px;
-    align-items:start;
+  /* ===== CPC ===== */
+  .cpc{background:var(--red-900);color:#fff;overflow:hidden;}
+  .cpc::before{content:"";position:absolute;inset:0;background:radial-gradient(720px 480px at 100% 0%,rgba(202,0,5,.6),transparent 70%),radial-gradient(480px 360px at 0% 100%,rgba(0,0,0,.4),transparent 70%);pointer-events:none;}
+  .cpc::after{content:"";position:absolute;left:0;right:0;top:0;height:24px;background:conic-gradient(#fff 25%,var(--red-900) 0 50%,#fff 0 75%,var(--red-900) 0);background-size:24px 24px;opacity:.9;}
+  .cpc .wrap{position:relative;}
+  .cpc-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px;}
+  .cpc-top .head{margin-bottom:0;}
+  .cpc-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .fact{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-card);padding-top:24px;padding-bottom:24px;padding-left:20px;padding-right:20px;}
+  .fact b{display:block;font-family:var(--f-head);font-weight:900;font-style:italic;font-size:48px;line-height:1;font-stretch:80%;}
+  .fact span{display:block;margin-top:8px;font-size:16px;color:var(--on-dark-muted);line-height:1.4;}
+  .cpc-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;}
+  .panel{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px;}
+  .panel h3{font-size:24px;font-weight:800;font-style:italic;text-transform:uppercase;font-stretch:85%;margin-bottom:8px;}
+  .panel>p{font-size:16px;color:var(--on-dark-muted);margin-bottom:24px;}
+  .hours li{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center;padding-top:16px;padding-bottom:16px;border-top:1px solid rgba(255,255,255,.12);}
+  .hours .nm{font-weight:600;font-size:16px;}
+  .hours .nm small{display:block;font-weight:400;color:var(--on-dark-muted);font-size:12px;letter-spacing:.04em;margin-top:4px;line-height:1.5;}
+  .hours .hr{font-family:var(--f-head);font-weight:800;font-style:italic;font-size:24px;white-space:nowrap;}
+  .hours .bar{grid-column:1/-1;height:8px;background:rgba(255,255,255,.1);transform:skewX(-16deg);overflow:hidden;}
+  .hours .bar i{display:block;height:100%;width:var(--w);background:#fff;transform-origin:left;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
+  .js .hours:not(.in) .bar i{transform:scaleX(0);}
+  .fine{margin-top:24px;display:flex;gap:16px;align-items:flex-start;background:rgba(0,0,0,.3);border-left:4px solid #fff;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;font-size:16px;color:var(--on-dark-muted);}
+  .fine svg{width:24px;height:24px;stroke:#fff;flex:none;margin-top:4px;}
+  .fine b{color:#fff;}
+  .sem-list li{padding-top:16px;padding-bottom:16px;border-top:1px solid rgba(255,255,255,.12);}
+  .sem-list li small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-faint);margin-bottom:4px;}
+  .sem-list li b{font-weight:600;font-size:16px;}
+  .flex-list{margin-top:24px;display:grid;gap:12px;}
+  .flex-list li{display:flex;gap:12px;font-size:16px;color:var(--on-dark-muted);}
+  .flex-list svg{width:20px;height:20px;stroke:#fff;flex:none;margin-top:4px;}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
+  .quote{margin:0;border-top:4px solid #fff;padding-top:24px;}
+  .quote blockquote{margin:0;font-size:16px;line-height:1.6;color:rgba(255,255,255,.9);}
+  .quote blockquote::before{content:"\201E";display:block;font-family:var(--f-head);font-weight:900;font-size:64px;line-height:.5;color:#ff3b3f;margin-bottom:16px;}
+  .quote figcaption{margin-top:16px;font-family:var(--f-head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:16px;}
+  .quote figcaption small{display:block;font-family:var(--f-body);font-style:normal;font-weight:400;text-transform:none;font-size:12px;color:var(--on-dark-faint);margin-top:4px;letter-spacing:.04em;}
+  .cpc-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:64px;align-items:center;}
+  .cpc-cta .btn:not(.ghost){--bg:#fff;--fg:var(--red-800);--bd:#fff;}
+  .cpc-cta .btn:not(.ghost):hover{--bg:var(--ink);--fg:#fff;--bd:var(--ink);}
+  @media (max-width:991px){
+    .cpc-top{grid-template-columns:1fr;gap:40px;}
+    .cpc-cols{grid-template-columns:1fr;}
+    .quotes{grid-template-columns:1fr;gap:40px;}
   }
-  .cta-left h2{
-    font-size:clamp(26px,3.6vw,36px);
-    margin-bottom:18px;
-  }
-  .cta-left p{
-    color:var(--text-muted);
-    font-size:16px;
-    margin-bottom:28px;
-  }
-  .cta-left .contact-mini{margin-top:6px;}
-  .cta-direct{
-    margin-top:32px;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
+  @media (max-width:600px){
+    .cpc-facts{grid-template-columns:1fr;}
+    .fact{display:flex;align-items:center;gap:16px;}
+    .fact b{min-width:112px;white-space:nowrap;}
+    .fact span{margin-top:0;}
+    .panel{padding-left:24px;padding-right:24px;padding-top:32px;padding-bottom:32px;}
+    .fine{flex-direction:column;gap:12px;}
   }
 
-  .form-card{
-    background:#fff;
-    border:1px solid rgba(20,17,17,0.08);
-    border-radius:var(--radius-card);
-    padding:36px;
-    box-shadow:0 30px 60px -40px rgba(20,17,17,0.2);
-  }
-  .form-card h3{font-size:20px;margin-bottom:6px;}
-  .form-card .sub{color:var(--text-muted);font-size:14px;margin-bottom:24px;}
-  .form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    margin-bottom:14px;
-  }
-  .field{display:flex;flex-direction:column;gap:6px;}
+  /* ===== FAQ ===== */
+  .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start;}
+  .faq-side{position:sticky;top:128px;}
+  .faq-side .h2{font-size:clamp(32px,3.6vw,48px);}
+  .faq-side .btn{margin-top:40px;}
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq details:first-child{border-top:2px solid var(--ink);}
+  .faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 40px;gap:24px;align-items:center;padding-top:24px;padding-bottom:24px;font-family:var(--f-head);font-weight:700;font-size:20px;line-height:1.3;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary i{width:40px;height:40px;border:2px solid var(--line);transform:skewX(-12deg);position:relative;transition:background .2s ease,border-color .2s ease;}
+  .faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:var(--ink);transform:translate(-50%,-50%) skewX(12deg);transition:transform .25s ease,background .2s ease;}
+  .faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);}
+  .faq details[open] summary i{background:var(--red);border-color:var(--red);}
+  .faq details[open] summary i::before{background:#fff;}
+  .faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0deg);background:#fff;}
+  .faq summary:hover{color:var(--red);}
+  .faq .ans{padding-bottom:24px;padding-right:64px;font-size:16px;color:var(--text-muted);}
+  .faq .ans a{color:var(--red);font-weight:600;}
+  @media (max-width:991px){ .faq-grid{grid-template-columns:1fr;gap:40px;} .faq-side{position:static;} }
+  @media (max-width:600px){ .faq summary{font-size:16px;gap:16px;} .faq .ans{padding-right:0;} }
+
+  /* ===== PRIJAVA ===== */
+  .apply::before{content:"";position:absolute;inset:0;background:radial-gradient(640px 480px at 0% 0%,rgba(202,0,5,.26),transparent 70%);pointer-events:none;}
+  .apply-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start;position:relative;}
+  .locs{display:grid;gap:16px;margin-top:40px;}
+  .loc{border:1px solid var(--line-dark);border-radius:var(--r-card);padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px;display:grid;grid-template-columns:48px 1fr;gap:16px;background:rgba(255,255,255,.03);transition:border-color .2s ease;}
+  .loc:hover{border-color:rgba(255,255,255,.36);}
+  .loc .pin{width:48px;height:48px;background:var(--red);transform:skewX(-12deg);display:flex;align-items:center;justify-content:center;}
+  .loc .pin svg{width:24px;height:24px;stroke:#fff;transform:skewX(12deg);}
+  .loc small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#ff3b3f;font-weight:600;}
+  .loc h3{font-size:20px;font-weight:700;margin-top:4px;margin-bottom:12px;font-family:var(--f-body);line-height:1.4;}
+  .loc .lines{display:flex;flex-wrap:wrap;gap:8px 24px;}
+  .loc .lines a{font-family:var(--f-head);font-weight:700;font-size:20px;color:#fff;border-bottom:2px solid transparent;transition:border-color .2s ease;}
+  .loc .lines a:hover{border-color:var(--red);}
+  .loc .lines a.mail{font-family:var(--f-body);font-weight:500;font-size:16px;color:var(--on-dark-muted);}
+  .form{background:#fff;color:var(--text);border-radius:var(--r-lg);padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.8);}
+  .form::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:var(--check);background-size:8px 8px;}
+  .form h3{font-size:32px;font-weight:900;font-style:italic;text-transform:uppercase;font-stretch:80%;}
+  .form .sub{font-size:16px;color:var(--text-muted);margin-top:8px;margin-bottom:32px;}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .field{display:flex;flex-direction:column;gap:8px;min-width:0;}
   .field.full{grid-column:1/-1;}
-  .field label{
-    font-family:'Poppins',sans-serif;
-    font-size:13px;
-    font-weight:600;
-    color:var(--text-muted);
-  }
-  .field input,.field select,.field textarea{
-    font-family:'Roboto',sans-serif;
-    font-size:15px;
-    padding:12px 14px;
-    border:1.5px solid rgba(20,17,17,0.14);
-    border-radius:var(--radius-btn);
-    background:var(--bg-off);
-    color:var(--text);
-    transition:border-color .15s ease;
-  }
-  .field input:focus,.field select:focus,.field textarea:focus{
-    outline:none;
-    border-color:var(--accent);
-  }
-  .field textarea{resize:vertical;min-height:90px;}
+  .field label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);}
+  .field input,.field select,.field textarea{width:100%;min-height:52px;padding-left:16px;padding-right:16px;padding-top:12px;padding-bottom:12px;font-size:16px;border:2px solid var(--line);border-radius:4px;background:var(--paper);transition:border-color .2s ease,background .2s ease;}
+  .field textarea{min-height:112px;resize:vertical;}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red);background:#fff;}
+  .form .fine-print{text-wrap:balance;font-size:12px;color:var(--text-faint);margin-top:16px;text-align:center;}
+  .form-ok{display:none;margin-top:16px;padding-top:12px;padding-bottom:12px;padding-left:16px;padding-right:16px;background:var(--red-soft);border-left:4px solid var(--red);font-size:16px;}
+  .form-ok.show{display:block;}
+  @media (max-width:991px){ .apply-grid{grid-template-columns:1fr;} }
+  @media (max-width:600px){ .form{padding-left:24px;padding-right:24px;} .row{grid-template-columns:1fr;} .loc{grid-template-columns:1fr;} }
 
-  @media (max-width:991px){
-    .cta-grid{grid-template-columns:1fr;}
-  }
-  @media (max-width:600px){
-    .form-row{grid-template-columns:1fr;}
-  }
+  /* ===== FINAL ===== */
+  .final{text-align:center;overflow:hidden;}
+  .final .h2{font-size:clamp(28px,7vw,104px);font-size:min(104px,12.4cqi);line-height:.96;}
+  .final .ln{display:block;white-space:nowrap;}
+  .final .wrap{container-type:inline-size;}
+  .final .lead{margin-left:auto;margin-right:auto;}
+  .final-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:48px;}
+  .finish-line{height:48px;margin-top:96px;background:var(--check);background-size:24px 24px;transform:skewY(-1.2deg);position:relative;}
+  .js .finish-line{clip-path:inset(0 100% 0 0);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1);}
+  .js .finish-line.in{clip-path:inset(0 0 0 0);}
 
   /* ===== FOOTER ===== */
-  footer{
-    background:#161112;
-    color:rgba(255,255,255,0.7);
-    padding-top:56px;
-    padding-bottom:32px;
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:40px;
-    padding-bottom:36px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-  }
-  .footer-logo{height:38px;margin-bottom:16px;filter:brightness(0) invert(1);}
-  .footer-grid p{color:rgba(255,255,255,0.55);font-size:14px;max-width:38ch;}
-  .footer-col h4{
-    color:#fff;
-    font-size:15px;
-    margin-bottom:16px;
-  }
-  .footer-col a{
-    display:block;
-    color:rgba(255,255,255,0.6);
-    font-size:14px;
-    padding:6px 0;
-    transition:color .15s ease;
-  }
-  .footer-col a:hover{color:#fff;}
-  .footer-bottom{
-    display:flex;
-    justify-content:space-between;
-    padding-top:24px;
-    font-size:13px;
-    color:rgba(255,255,255,0.4);
-    flex-wrap:wrap;
-    gap:10px;
-  }
-  @media (max-width:768px){
-    .footer-grid{grid-template-columns:1fr;gap:28px;}
-  }
+  footer{background:var(--carbon);color:var(--on-dark-muted);padding-top:80px;padding-bottom:40px;font-size:16px;}
+  .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line-dark);}
+  .f-logo{height:48px;width:auto;filter:brightness(0) invert(1);margin-bottom:24px;}
+  .f-grid p{max-width:36ch;}
+  .f-col h4{font-family:var(--f-head);color:#fff;font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+  .f-col a,.f-col span{display:block;padding-top:4px;padding-bottom:4px;}
+  .f-col a:hover{color:#fff;}
+  .f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12px;color:var(--on-dark-faint);letter-spacing:.04em;}
+  @media (max-width:991px){ .f-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .f-grid{grid-template-columns:1fr;gap:32px;} }
 
-  /* ===== REVEAL ===== */
-  .reveal{
-    opacity:1;
-    transform:translateY(0);
-    transition:opacity .5s ease, transform .5s ease;
-  }
-  .reveal.pending{
-    opacity:1;
-    transform:translateY(12px);
-  }
-  .reveal.in-view{
-    transform:translateY(0);
+  @media (max-width:400px){ .pkg-step h3{font-size:12px;letter-spacing:.08em;} .pkg-step h3 i{width:24px;height:24px;font-size:12px;} .rb-text h3,.why-card h3{font-size:20px;} .rb-row>*{padding-left:12px;padding-right:12px;} .rb-row{grid-template-columns:64px 1fr;} }
+
+  /* ===== REVEAL (sadržaj je vidljiv i bez JS-a) ===== */
+  .js .rv{transform:translateY(16px);transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+  .js .rv.in{transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.001s !important;animation-delay:0s !important;animation-iteration-count:1 !important;transition-duration:.001s !important;}
+    .hv-glint,.hv-speed{display:none;}
+    .semafor .l.r::after,.semafor .l.y::after{animation:none;opacity:0;}
+    .semafor .l.g::after{animation:none;opacity:1;}
+    .ticker-track{animation:none;}
+    .js .rv{transform:none;}
   }
 </style>
 </head>
 <body>
 
-<header id="site-header">
-  <div class="wrap nav-inner">
-    <a href="#" class="logo">
-      <img src="assets/logo.png" alt="Auto škola Reli - logo">
-    </a>
-    <nav class="nav-links">
-      <a href="#kategorije">Kategorije</a>
-      <a href="#uslovi">Uslovi i lokacije</a>
-      <a href="#o-nama">O nama</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-    <div class="nav-cta-desktop">
-      <a href="tel:+38118241241" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;">018/241-241</a>
-      <a href="#kontakt" class="btn btn-primary">Prijavi se za obuku</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="chk" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#fff"/><rect width="4" height="4" fill="#161212"/><rect x="4" y="4" width="4" height="4" fill="#161212"/></pattern>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-loc">
+      <span>Đorđa Andrejevića Kuna 60 · <a href="tel:+38118572634"><b>018/572-634</b></a></span>
+      <span>Bulevar Nemanjića 25, lokal 55 · <a href="tel:+38118574757"><b>018/57-47-57</b></a></span>
     </div>
-    <button class="burger" id="burger" aria-label="Otvori meni">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="mail" href="mailto:info@autoskolareli.rs">info@autoskolareli.rs</a>
+  </div>
+</div>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Auto škola Reli, na vrh stranice"><img src="assets/logo.webp" alt="Auto škola Reli" width="600" height="150"></a>
+    <nav class="nav-links" aria-label="Glavni meni">
+      <a href="#kategorije">Kategorije</a>
+      <a href="#paket">Časovi i cena</a>
+      <a href="#put">Put do dozvole</a>
+      <a href="#cpc">CPC</a>
+      <a href="#prijava">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-tel" href="tel:+381691166191"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>069/11-66-191</a>
+      <a href="#prijava" class="btn"><span>Prijavi se</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobilePanel"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-panel" id="mobilePanel">
-    <div class="wrap" style="display:flex;flex-direction:column;">
+    <div class="wrap">
       <a href="#kategorije">Kategorije</a>
-      <a href="#uslovi">Uslovi i lokacije</a>
-      <a href="#o-nama">O nama</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#kontakt" class="btn btn-primary btn-block">Prijavi se za obuku</a>
+      <a href="#paket">Časovi i cena</a>
+      <a href="#put">Put do dozvole</a>
+      <a href="#cpc">CPC centar</a>
+      <a href="#prijava">Kontakt</a>
+      <a href="#prijava" class="btn block"><span>Prijavi se za obuku</span></a>
     </div>
   </div>
 </header>
 
-<main>
+<main id="top">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-label="Uvod">
     <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Auto škola Reli · Niš · od 1998. godine</div>
-        <h1>Vozačku dozvolu stičeš <span>sigurno i bez lutanja</span>, uz instruktora koji te vodi do kraja</h1>
-        <p class="lead">Obučavamo kandidate za AM, A1, A2, A i B kategoriju, kao i profesionalne vozače za CPC sertifikat. Prijaviš se jednom, a mi vodimo ceo proces do polaganja.</p>
-        <div class="hero-cta-row">
-          <a href="#kontakt" class="btn btn-primary">Prijavi se za obuku</a>
-          <a href="tel:+38118241241" class="btn btn-outline">Pozovi 018/241-241</a>
+      <div class="hero-text">
+        <div class="tag">Auto škola u Nišu · od 1998.</div>
+        <h1><span class="ln">Od prvog časa</span><span class="ln">do <span class="red">dozvole.</span></span></h1>
+        <p class="lead"><span class="s">Obuka za AM, A1, A2, A i B kategoriju u Nišu.</span><span class="s">Teoriju slušaš u jednoj od dve naše učionice, po izboru.</span></p>
+        <div class="hero-cta">
+          <a href="#paket" class="btn"><span>Izračunaj svoje časove</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="tel:+381691166191" class="btn ghost"><span>Pozovi 069/11-66-191</span></a>
         </div>
-        <div class="hero-badges">
-          <div class="hero-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-            27 godina rada
-          </div>
-          <div class="hero-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Više hiljada obučenih vozača
-          </div>
-        </div>
+        <ul class="hero-points">
+          <li><b>28</b><span>godina<br>obuke</span></li>
+          <li><b>2</b><span>učionice<br>u Nišu</span></li>
+          <li><b>5+1</b><span>kategorija<br>i CPC centar</span></li>
+        </ul>
       </div>
-      <div class="hero-media">
-        <img src="assets/1-20.jpg" alt="Vozila auto škole Reli parkirana u parku, spremna za čas vožnje">
-        <div class="hero-media-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Savremen vozni park
+
+      <div class="hero-visual">
+        <div class="semafor" aria-hidden="true">
+          <span class="l r"></span><span class="l y"></span><span class="l g"></span>
+          <small>Start</small>
+        </div>
+        <div class="hv-photo">
+          <img src="assets/flota-park.webp" alt="Tri automobila Auto škole Reli u crveno-beloj livreji sa šahovskom zastavicom, parkirani u parku" width="1200" height="800" fetchpriority="high">
+          <div class="hv-glint"></div>
+          <div class="hv-speed" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="hv-flag" aria-hidden="true"></div>
+        <div class="hv-card">
+          <img src="assets/motori-staza.webp" alt="Motocikli Auto škole Reli na putu" width="990" height="660">
+          <div><b>I na dva točka</b><span>AM, A1, A2 i A kategorija</span></div>
+        </div>
+        <div class="hv-badge"><span>Od 1998.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>AM</span><span>A1</span><span>A2</span><span>A</span><span>B</span><span>CPC centar</span><span>Učinimo saobraćaj bezbednijim</span>
+      <span>AM</span><span>A1</span><span>A2</span><span>A</span><span>B</span><span>CPC centar</span><span>Učinimo saobraćaj bezbednijim</span>
+    </div>
+  </div>
+
+  <!-- BROJKE -->
+  <section class="stats" aria-label="Auto škola Reli u brojkama">
+    <div class="wrap"><div class="stats-grid">
+      <div class="stat rv"><i class="kicker"></i><div class="num"><span data-count="1998">1998</span></div><p><span class="s">Godina kad smo upisali</span><span class="s">prve kandidate.</span></p></div>
+      <div class="stat rv"><i class="kicker"></i><div class="num"><span data-count="28">28</span><small>god.</small></div><p><span class="s">Obučavamo vozače</span><span class="s">u Nišu bez prekida.</span></p></div>
+      <div class="stat rv"><i class="kicker"></i><div class="num"><span data-count="2">2</span><small>učionice</small></div><p><span class="s">Svaka sa kancelarijom,</span><span class="s">lokaciju biraš sam.</span></p></div>
+      <div class="stat rv"><i class="kicker"></i><div class="num"><span>1000</span><small>+</small></div><p><span class="s">Više hiljada vozača</span><span class="s">od AM do D kategorije.</span></p></div>
+    </div></div>
+  </section>
+
+  <!-- ZASTO -->
+  <section class="section paper" id="zasto">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="tag"><span class="n">01</span> Zašto Reli</div>
+        <h2 class="h2"><span class="s">Obuka po planu,</span><span class="s">a ne <em>po osećaju.</em></span></h2>
+        <p class="lead"><span class="s">Svaki kandidat prolazi iste tematske celine, istim redom.</span><span class="s">Uvek znaš šta si savladao i šta te sledeće čeka.</span></p>
+      </div>
+      <div class="why-grid">
+        <figure class="why-photo rv" style="margin:0">
+          <img src="assets/tim.webp" alt="Instruktori Auto škole Reli ispred vozila škole u parku" width="1200" height="769" loading="lazy">
+          <figcaption><b>Ekipa Auto škole Reli</b>Instruktori i predavači koji redovno pohađaju seminare za unapređenje znanja.</figcaption>
+        </figure>
+        <div class="why-cards">
+          <article class="why-card rv">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+            <h3>Učionicu biraš sam</h3>
+            <p><span class="s">Imamo dve poslovne jedinice, svaka sa učionicom.</span><span class="s">Teoriju slušaš na lokaciji koja ti je bliža.</span></p>
+          </article>
+          <article class="why-card rv">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+            <h3>Predavači sa diplomom</h3>
+            <p><span class="s">Teoriju drže visokoobrazovani predavači.</span><span class="s">Uz propise uče te i gde u saobraćaju nastaje rizik.</span></p>
+          </article>
+          <article class="why-card rv">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/></svg></div>
+            <h3>Kružni tok i autoput</h3>
+            <p><span class="s">Posebno vežbamo rizične raskrsnice i kružne tokove.</span><span class="s">Voziš i van naselja i na autoputu.</span></p>
+          </article>
+          <article class="why-card rv">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg></div>
+            <h3>Parking na tri načina</h3>
+            <p><span class="s">Podužno, upravno i pod uglom, na gradskim parkinzima.</span><span class="s">Poligon i ispitne trase dolaze u drugoj polovini obuke.</span></p>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOL UVOD -->
-  <section class="pain">
+  <!-- KATEGORIJE -->
+  <section class="section" id="kategorije">
     <div class="wrap">
-      <div class="pain-inner reveal">
-        <h2>Ne znaš odakle da počneš papire za vozačku?</h2>
-        <p>Možda si već čuo priče o instruktorima koji žure, teoriji koja zvuči kao strani jezik i placu na kome se svi osim tebe snalaze. Nije lako sam da proceniš kad si stvarno spreman za saobraćaj.</p>
-        <p>Kod nas ne ideš na probu. Prolaziš kroz obuku korak po korak, sa istim instruktorom od prvog do poslednjeg časa, dok ne budeš siguran da možeš sam.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GLAVNI SADRŽAJ: KATEGORIJE -->
-  <section id="kategorije">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Ponuda obuke</div>
-        <h2>Obuka za svaku kategoriju vozača</h2>
-        <p>Bilo da tek uzimaš prvu dozvolu ili proširuješ postojeću, imamo program koji odgovara tvojim godinama i cilju.</p>
+      <div class="head rv">
+        <div class="tag"><span class="n">02</span> Kategorije</div>
+        <h2 class="h2"><span class="s">Pet kategorija,</span><span class="s">jedna <em>startna linija.</em></span></h2>
+        <p class="lead"><span class="s">Mopedi, motocikli i automobili, na vozilima škole.</span><span class="s">Za neke kategorije obuku počinješ već sa 15 godina.</span></p>
       </div>
 
       <div class="cat-grid">
-        <div class="cat-card reveal">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+        <article class="cat feature rv">
+          <div class="cat-body">
+            <div class="cat-top">
+              <div class="plate"><span>B</span></div>
+              <div class="ages"><span>Obuka od <b>16</b></span><span>Ispit sa <b>17</b></span></div>
+            </div>
+            <h3>Putnički automobil</h3>
+            <p><span class="s">Teoriju i časove vožnje počinješ sa 16.</span><span class="s">Na praktični ispit izlaziš čim napuniš 17.</span></p>
+            <div class="veh"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>40 časova teorije i 40 časova vožnje</div>
+            <a href="#paket" class="go" data-pick="B">Izračunaj časove za B <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
-          <span class="cat-age">Od 16 godina</span>
-          <h3>Kategorija AM</h3>
-          <p>Obuka za mopede i lake motocikle - prvi korak ka samostalnom saobraćaju za najmlađe kandidate.</p>
-        </div>
+          <div class="cat-img"><img src="assets/citroen-c3.webp" alt="Beli Citroën C3 Auto škole Reli sa L tablom na krovu" width="1200" height="800" loading="lazy"></div>
+        </article>
 
-        <div class="cat-card reveal">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+        <article class="cat rv">
+          <div class="cat-top">
+            <div class="plate"><span>AM</span></div>
+            <div class="ages"><span>Obuka od <b>15</b></span><span>Ispit sa <b>16</b></span></div>
           </div>
-          <span class="cat-age">Od 16 godina</span>
-          <h3>Kategorija A1</h3>
-          <p>Motocikli do 125 kubika. Idealan izbor za brzo i praktično kretanje po gradu.</p>
-        </div>
+          <h3>Mopedi</h3>
+          <p><span class="s">Mopedi, laki tricikli i laki četvorocikli.</span><span class="s">Prva dozvola za najmlađe vozače.</span></p>
+          <div class="veh"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h7l3-7h3M14 6h3l1 4"/></svg>Benelli Pepe, 49 cm³</div>
+          <a href="#paket" class="go" data-pick="AM">Izračunaj časove za AM <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
 
-        <div class="cat-card reveal">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+        <article class="cat rv">
+          <div class="cat-top">
+            <div class="plate"><span>A1</span></div>
+            <div class="ages"><span>Obuka od <b>15</b></span><span>Ispit sa <b>16</b></span></div>
           </div>
-          <span class="cat-age">Od 18 godina</span>
-          <h3>Kategorija A2</h3>
-          <p>Motocikli srednje snage, korak pred punu A kategoriju. Radimo teoriju i vožnju na placu i u saobraćaju.</p>
-        </div>
+          <h3>Motocikli do 125 cm³</h3>
+          <p><span class="s">Laki motocikli i teški tricikli do 15 kW.</span><span class="s">Prvi pravi motocikl, legalno sa 16.</span></p>
+          <div class="veh"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h7l3-7h3M14 6h3l1 4"/></svg>Yamaha YBR 125</div>
+          <a href="#paket" class="go" data-pick="A1">Izračunaj časove za A1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
 
-        <div class="cat-card reveal">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h6l3-7h4M11 10l2 4"/></svg>
+        <article class="cat rv">
+          <div class="cat-top">
+            <div class="plate"><span>A2</span></div>
+            <div class="ages"><span>Obuka od <b>17</b></span><span>Ispit sa <b>18</b></span></div>
           </div>
-          <span class="cat-age">Od 24 godine</span>
-          <h3>Kategorija A</h3>
-          <p>Motocikli bez ograničenja snage, za kandidate koji žele potpunu slobodu na dva točka.</p>
-        </div>
+          <h3>Motocikli do 35 kW</h3>
+          <p><span class="s">Snaga do 0,2 kW po kilogramu mase.</span><span class="s">Posle dve godine vodi te pravo ka A.</span></p>
+          <div class="veh"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h7l3-7h3M14 6h3l1 4"/></svg>Kymco, automatski menjač</div>
+          <a href="#paket" class="go" data-pick="A2">Izračunaj časove za A2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
 
-        <div class="cat-card reveal">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="6" rx="1.5"/><circle cx="7" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
+        <article class="cat rv">
+          <div class="cat-top">
+            <div class="plate"><span>A</span></div>
+            <div class="ages"><span>Obuka od <b>23</b></span><span>Ispit sa <b>24</b></span></div>
           </div>
-          <span class="cat-age">Od 17 godina</span>
-          <h3>Kategorija B</h3>
-          <p>Klasična obuka za putnički automobil. Najtraženija kategorija, uz teoriju, poligon i vožnju u gradu.</p>
-        </div>
-
-        <div class="cat-card reveal">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-          </div>
-          <span class="cat-age">Za profesionalce</span>
-          <h3>Osnovna i periodična obuka</h3>
-          <p>Priprema za sticanje i obnovu CPC sertifikata, obavezno za sve profesionalne vozače.</p>
-        </div>
-      </div>
-
-      <div class="cpc-banner reveal">
-        <div>
-          <h3>Radiš kao profesionalni vozač?</h3>
-          <p>Vodimo te kroz osnovnu i periodičnu CPC obuku, po važećem programu, bez gubljenja vremena na nepotpunu dokumentaciju.</p>
-        </div>
-        <a href="#kontakt" class="btn btn-outline">Prijavi se za CPC obuku</a>
+          <h3>Motocikli preko 35 kW</h3>
+          <p><span class="s">Motocikli bez ograničenja snage.</span><span class="s">Uz A2 od dve godine, ispit polažeš sa 20.</span></p>
+          <div class="veh"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17h7l3-7h3M14 6h3l1 4"/></svg>Kawasaki ER-6n</div>
+          <a href="#paket" class="go" data-pick="A">Izračunaj časove za A <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- USLOVI I LOKACIJE -->
-  <section id="uslovi" class="info-section">
+  <!-- PAKET / CENE -->
+  <section class="section paper" id="paket">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Praktične informacije</div>
-        <h2>Uslovi za upis, lokacije i kontakt</h2>
-        <p>Sve što treba da znaš pre nego što se prijaviš, na jednom mestu.</p>
+      <div class="head rv">
+        <div class="tag"><span class="n">03</span> Časovi i cena</div>
+        <h2 class="h2"><span class="s">Sklopi svoj paket</span><span class="s">pre <em>prvog poziva.</em></span></h2>
+        <p class="lead"><span class="s">Izaberi kategoriju i dozvolu koju već imaš.</span><span class="s">Odmah vidiš koliko časova teorije i vožnje te čeka.</span></p>
       </div>
 
-      <div class="info-grid">
-        <div class="info-card reveal">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
-            Uslovi za upis po kategorijama
-          </h3>
-          <ul class="info-list">
-            <li><span>AM - mopedi</span><span>16 godina</span></li>
-            <li><span>A1 - motocikli do 125cc</span><span>16 godina</span></li>
-            <li><span>A2 - motocikli srednje snage</span><span>18 godina</span></li>
-            <li><span>A - motocikli bez ograničenja</span><span>24 godine</span></li>
-            <li><span>B - putnički automobil</span><span>17 godina</span></li>
+      <div class="pkg">
+        <div class="pkg-form rv">
+          <div class="pkg-step">
+            <h3><i>1</i> Koju kategoriju upisuješ?</h3>
+            <div class="chips" id="catChips" role="group" aria-label="Kategorija">
+              <button type="button" class="chip" data-cat="AM" aria-pressed="false"><span>AM</span></button>
+              <button type="button" class="chip" data-cat="A1" aria-pressed="false"><span>A1</span></button>
+              <button type="button" class="chip" data-cat="A2" aria-pressed="false"><span>A2</span></button>
+              <button type="button" class="chip" data-cat="A" aria-pressed="false"><span>A</span></button>
+              <button type="button" class="chip" data-cat="B" aria-pressed="true"><span>B</span></button>
+            </div>
+          </div>
+          <div class="pkg-step">
+            <h3><i>2</i> Koju dozvolu već imaš?</h3>
+            <div class="chips" id="hasChips" role="group" aria-label="Dozvola koju već imaš">
+              <button type="button" class="chip sm" data-has="none" aria-pressed="true"><span>Nemam dozvolu</span></button>
+              <button type="button" class="chip sm" data-has="AMA1" aria-pressed="false"><span>AM ili A1</span></button>
+              <button type="button" class="chip sm" data-has="A2" aria-pressed="false"><span>A2</span></button>
+              <button type="button" class="chip sm" data-has="A" aria-pressed="false"><span>A</span></button>
+            </div>
+          </div>
+          <p class="pkg-note" id="pkgNote"><span class="s">Uz postojeću dozvolu ideš na skraćeni program.</span><span class="s">Vozačku ponesi na uvid prilikom upisa.</span></p>
+        </div>
+
+        <div class="ticket rv" aria-live="polite">
+          <div class="ticket-head">
+            <div>
+              <small>Tvoj paket</small>
+              <h3 id="tTitle"><span>B</span> kategorija</h3>
+            </div>
+            <span class="save" id="tSave" hidden></span>
+          </div>
+          <div class="ticket-body">
+            <div class="gauge">
+              <div class="gauge-top"><span>Teorijska obuka</span><b id="tT">40<small>časova</small></b></div>
+              <div class="bars t" id="barsT"></div>
+            </div>
+            <div class="gauge">
+              <div class="gauge-top"><span>Praktična obuka</span><b id="tP">40<small>časova</small></b></div>
+              <div class="bars" id="barsP"></div>
+            </div>
+            <ol class="route" id="tRoute"></ol>
+            <div class="meta-row">
+              <div><small>Godine</small><b id="tAge">Obuka od 16, ispit sa 17</b></div>
+              <div><small>Voziš</small><b id="tVeh">Automobil škole</b></div>
+            </div>
+            <div class="price">
+              <div>
+                <small>Cena paketa</small>
+                <div class="amount" id="tPrice">Na upit</div>
+                <p id="tPriceNote">Tačan iznos za ovaj paket kažemo ti odmah, telefonom ili odgovorom na upit.</p>
+              </div>
+              <div class="acts">
+                <a href="#prijava" class="btn" id="tSend"><span>Pošalji upit za ovaj paket</span></a>
+                <a href="tel:+381691166191" class="tel">ili pozovi <b>069/11-66-191</b></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUT DO DOZVOLE (roadbook) -->
+  <section class="section dark put" id="put">
+    <div class="wrap put-grid">
+      <div class="put-side rv">
+        <div class="tag"><span class="n">04</span> Put do dozvole</div>
+        <h2 class="h2"><span class="s">Sedam tačaka</span><span class="s">od upisa <em>do cilja.</em></span></h2>
+        <p class="lead"><span class="s">Ovako izgleda obuka za B, od nule.</span><span class="s">Reli vozači imaju roadbook, pa ga imaš i ti.</span></p>
+        <div class="odo" aria-hidden="true"><small>Pređeno časova</small><b id="odo">00</b></div>
+      </div>
+
+      <div class="rb" id="roadbook">
+        <div class="rb-progress" aria-hidden="true"><i id="rbFill"></i></div>
+        <div class="rb-head" aria-hidden="true"><span>Tačka</span><span>Smer</span><span>Zadatak</span></div>
+
+        <div class="rb-row" data-h="0">
+          <div class="rb-no">01<small>Start</small></div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="tp" pathLength="1" d="M32 54V12M24 20l8-8 8 8"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><h3>Upis u kancelariji</h3><p><span class="s">Doneseš važeću ličnu kartu, ispis radimo na licu mesta.</span><span class="s">Ako već imaš dozvolu, ponesi je za skraćeni program.</span></p></div>
+        </div>
+
+        <div class="rb-row" data-h="40">
+          <div class="rb-no">02</div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="road" d="M12 32h40"/><path class="tp" pathLength="1" d="M32 56V10M24 18l8-8 8 8"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><span class="pill">40 časova</span><h3>Teorija u učionici</h3><p><span class="s">Propisi, pravila i rizici u saobraćaju na putu.</span><span class="s">Učionicu biraš sam, na jednoj od dve lokacije.</span></p></div>
+        </div>
+
+        <div class="rb-row" data-h="40">
+          <div class="rb-no">03</div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="road" d="M32 32V8M12 32h20"/><path class="tp" pathLength="1" d="M32 56V32h22M46 24l8 8-8 8"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><h3>Teorijski ispit</h3><p><span class="s">Za teorijski deo ne treba ti lekarsko uverenje.</span><span class="s">Ovde završavaš prvu polovinu puta.</span></p></div>
+        </div>
+
+        <div class="rb-row" data-h="40">
+          <div class="rb-no">04</div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="road" d="M32 32V8M32 32h20"/><path class="tp" pathLength="1" d="M32 56V32H10M18 24l-8 8 8 8"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><h3>Lekarski pregled</h3><p><span class="s">Radiš ga posle položene teorije, pre prvog časa vožnje.</span><span class="s">Potvrđuje da si spreman za volan.</span></p></div>
+        </div>
+
+        <div class="rb-row" data-h="60">
+          <div class="rb-no">05</div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="road" cx="32" cy="30" r="10"/><path class="road" d="M8 30h14M32 8v12"/><path class="tp" pathLength="1" d="M32 56V40a10 10 0 0 0 10-10h12M46 22l8 8-8 8"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><span class="pill">Prva polovina vožnje</span><h3>Grad, kružni tok, autoput</h3><p><span class="s">Rizične raskrsnice, vožnja van naselja i autoputem.</span><span class="s">Parkiranje podužno, upravno i pod uglom.</span></p></div>
+        </div>
+
+        <div class="rb-row" data-h="80">
+          <div class="rb-no">06</div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="road" d="M32 34L12 12"/><path class="tp" pathLength="1" d="M32 56V34l18-22M40 12h10v10"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><span class="pill">Druga polovina vožnje</span><h3>Poligon i ispitne trase</h3><p><span class="s">Vežbaš poligonske radnje na poligonu za obuku.</span><span class="s">Upoznaješ trase unapred utvrđenih ispitnih zadataka.</span></p></div>
+        </div>
+
+        <div class="rb-row finish" data-h="80">
+          <div class="rb-no">07<small>Cilj</small></div>
+          <div class="rb-tulip"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="tp" pathLength="1" d="M32 56V8"/><rect class="flag" x="33" y="8" width="24" height="16"/><rect x="33" y="8" width="24" height="16" fill="none" stroke="#fff" stroke-width="2"/><circle class="dot" cx="32" cy="56" r="5"/></svg></div>
+          <div class="rb-text"><h3>Praktični ispit</h3><p><span class="s">Za B kategoriju izlaziš na ispit sa navršenih 17.</span><span class="s">Posle toga voziš sam, bez instruktora pored sebe.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOZNI PARK -->
+  <section class="section" id="vozila">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="tag"><span class="n">05</span> Vozni park</div>
+        <h2 class="h2"><span class="s">Vozila na kojima</span><span class="s">učiš <em>i polažeš.</em></span></h2>
+        <p class="lead"><span class="s">Automobili u Reli livreji, sa L tablom na krovu.</span><span class="s">Za svaku moto kategoriju imamo poseban motocikl.</span></p>
+      </div>
+      <div class="fleet">
+        <figure class="f1 rv"><img src="assets/yaris.webp" alt="Crvena Toyota Yaris Auto škole Reli sa upaljenim farovima i L tablom" width="1200" height="702" loading="lazy"><figcaption><span>Toyota <em>Yaris</em></span></figcaption></figure>
+        <figure class="f2 rv"><img src="assets/polo.webp" alt="Narandžasti Volkswagen Polo Auto škole Reli sa L tablom na krovu" width="1200" height="800" loading="lazy"><figcaption><span>VW <em>Polo</em></span></figcaption></figure>
+        <figure class="f3 rv"><img src="assets/motor-kawasaki.webp" alt="Beli Kawasaki motocikl Auto škole Reli za A kategoriju, parkiran pored puta" width="990" height="660" loading="lazy"><figcaption><span>Kawasaki <em>za A</em></span></figcaption></figure>
+        <figure class="f4 rv"><img src="assets/citroen-c3.webp" alt="Beli Citroën C3 sa crvenim Reli natpisom i šahovskom zastavicom" width="1200" height="800" loading="lazy"><figcaption><span>Citroën <em>C3</em></span></figcaption></figure>
+        <figure class="f5 rv"><img src="assets/flota-nalepnice.webp" alt="Automobili Auto škole Reli poređani jedan do drugog, jedan prekriven nalepnicama saobraćajnih znakova" width="1200" height="800" loading="lazy"><figcaption><span>Flota <em>spremna</em></span></figcaption></figure>
+        <figure class="f6 rv"><img src="assets/motori-staza.webp" alt="Motocikli Auto škole Reli na putu u zalazak sunca" width="990" height="660" loading="lazy"><figcaption><span>Motori <em>za A kategorije</em></span></figcaption></figure>
+      </div>
+      <div class="bikes">
+        <div class="bike rv"><b>AM</b><span><small>Moped</small>Benelli Pepe, 49 cm³</span></div>
+        <div class="bike rv"><b>A1</b><span><small>Motocikl</small>Yamaha YBR 125</span></div>
+        <div class="bike rv"><b>A2</b><span><small>Automatski menjač</small>Kymco</span></div>
+        <div class="bike rv"><b>A</b><span><small>Preko 35 kW</small>Kawasaki ER-6n</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CPC -->
+  <section class="section cpc on-red" id="cpc">
+    <div class="wrap">
+      <div class="cpc-top">
+        <div class="head rv">
+          <div class="tag"><span class="n">06</span> CPC centar</div>
+          <h2 class="h2"><span class="s">Licenca za</span><span class="s">profesionalne vozače.</span></h2>
+          <p class="lead"><span class="s">Od 2020. vodimo CPC centar u Bulevaru Nemanjića.</span><span class="s">Za vozače kojima je volan osnovno zanimanje.</span></p>
+        </div>
+        <div class="cpc-facts rv">
+          <div class="fact"><b>5 god.</b><span>važi kvalifikaciona kartica</span></div>
+          <div class="fact"><b>5</b><span>periodičnih seminara za obnovu</span></div>
+          <div class="fact"><b>7</b><span>časova traje jednodnevni seminar</span></div>
+        </div>
+      </div>
+
+      <div class="cpc-cols">
+        <div class="panel rv">
+          <h3>Početni CPC, po trajanju obuke</h3>
+          <p>Posle 30. decembra 2019. vozači C, C1, D, D1, CE, C1E, DE i D1E kategorija moraju da završe obuku i polože stručni ispit.</p>
+          <ul class="hours" id="hours">
+            <li><span class="nm">Osnovna obuka<small>Za vozače bez završene trogodišnje srednje škole</small></span><span class="hr">280 č.</span><span class="bar"><i style="--w:100%"></i></span></li>
+            <li><span class="nm">Osnovna ubrzana<small>Za vozače sa najmanje trogodišnjom srednjom školom</small></span><span class="hr">140 č.</span><span class="bar"><i style="--w:50%"></i></span></li>
+            <li><span class="nm">Dodatna obuka<small>Prelaz sa tereta na putnike i obrnuto, posle osnovne</small></span><span class="hr">70 č.</span><span class="bar"><i style="--w:25%"></i></span></li>
+            <li><span class="nm">Dodatna obuka<small>Prelaz posle ubrzane obuke ili priznate kvalifikacije</small></span><span class="hr">35 č.</span><span class="bar"><i style="--w:12.5%"></i></span></li>
+            <li><span class="nm">Dopunska obuka<small>Ako stručni ispit ne položiš u roku od godinu dana</small></span><span class="hr">14 č.</span><span class="bar"><i style="--w:5%"></i></span></li>
+          </ul>
+          <div class="fine"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h0"/></svg><p>Kazne za vožnju bez CPC-a idu od <b>40.000 din</b> za fizička lica, do <b>500.000 din</b> za preduzetnike i <b>800.000 din</b> za preduzeća.</p></div>
+        </div>
+
+        <div class="panel rv">
+          <h3>Periodični seminari</h3>
+          <p>Jedan jednodnevni seminar od 7 časova, u proseku jednom godišnje. Ulazni i izlazni test traju po 30 minuta.</p>
+          <ul class="sem-list">
+            <li><small>Seminar I</small><b>Aktuelni propisi iz transporta tereta i putnika</b></li>
+            <li><small>Seminar II</small><b>Radno vreme vozača, analogni i digitalni tahografi</b></li>
+          </ul>
+          <ul class="flex-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Seminar radnim danima ili vikendom</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Zatvorena grupa samo za vozače tvoje firme</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Plaćaš kao fizičko lice ili kao trošak firme</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Stručni ispit polažeš u našem centru</li>
           </ul>
         </div>
+      </div>
 
-        <div class="info-card reveal">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Lokacije i kontakt telefoni
-          </h3>
-          <div class="contact-mini">
-            <div class="addr">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Učionica Centar - teorijska nastava i prijava kandidata</span>
-            </div>
-            <a href="tel:+38118241241">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.87.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.88.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
-              018/241-241
-            </a>
-            <div class="addr" style="margin-top:8px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Poligon i teren za vožnju - dogovor sa instruktorom po grupama</span>
-            </div>
-            <a href="tel:+381601811011">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.87.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.88.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
-              060/1811-011
-            </a>
-          </div>
-        </div>
+      <div class="quotes">
+        <figure class="quote rv"><blockquote>Tokom obuke najviše mi se dopala želja i spremnost predavača da nam približe i dočaraju svaku situaciju i nejasnoću tokom predavanja.</blockquote><figcaption>Aleksandar Trišović<small>Polaznik CPC obuke</small></figcaption></figure>
+        <figure class="quote rv"><blockquote>Naučio sam sve ono što do sada nisam znao. Očekujem da položim stručni ispit, pošto su nas predavači dobro obučili.</blockquote><figcaption>Milan Živadinović<small>Polaznik CPC obuke</small></figcaption></figure>
+        <figure class="quote rv"><blockquote>Obuka je organizovana na profesionalan način. Dopao mi se ambijent i profesionalnost predavača, a nova znanja ću primenjivati u praksi.</blockquote><figcaption>Ivan Ranđelović<small>Polaznik CPC obuke</small></figcaption></figure>
+      </div>
+
+      <div class="cpc-cta rv">
+        <a href="#prijava" class="btn" data-pick-form="CPC"><span>Prijavi se za CPC seminar</span></a>
+        <a href="tel:+381695515000" class="btn ghost"><span>Pozovi 069/55-15-000</span></a>
       </div>
     </div>
   </section>
 
-  <!-- O BRENDU -->
-  <section id="o-nama">
-    <div class="wrap about-grid">
-      <div class="about-media reveal">
-        <img src="assets/1-29.jpg" alt="Instruktori i polaznici auto škole Reli pored vozila u parku">
+  <!-- FAQ -->
+  <section class="section paper" id="pitanja">
+    <div class="wrap faq-grid">
+      <div class="faq-side rv">
+        <div class="tag"><span class="n">07</span> Pitanja</div>
+        <h2 class="h2"><span class="s">Sve što te zanima</span><span class="s"><em>pre upisa.</em></span></h2>
+        <p class="lead"><span class="s">Pitanja kandidata i profesionalnih vozača.</span><span class="s">Za sve ostalo, jedan poziv je dovoljan.</span></p>
+        <a href="tel:+38118572634" class="btn ghost"><span>Pozovi 018/572-634</span></a>
       </div>
-      <div class="about-text reveal">
-        <div class="eyebrow">O auto školi Reli</div>
-        <h2>Radimo u Nišu od 1998. godine, i to se oseti u pristupu</h2>
-        <p>Auto škola Reli obučava kandidate za AM, A1, A2, A i B kategoriju, kao i profesionalne vozače koji polažu za CPC sertifikat. Nismo firma koja je juče otvorila vrata - ovim se bavimo skoro tri decenije.</p>
-        <p>Instruktori kod nas ne jure kroz program. Vodimo te dosledno, od prve teorijske table do trenutka kad samostalno uđeš u saobraćaj.</p>
-        <div class="about-points">
-          <div class="about-point">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <div>
-              <strong>Dosledna obuka</strong>
-              <span>Isti instruktor od prvog do zadnjeg časa vožnje.</span>
-            </div>
-          </div>
-          <div class="about-point">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <div>
-              <strong>Svi profili kandidata</strong>
-              <span>Od prve moped dozvole do CPC obuke za profesionalce.</span>
-            </div>
-          </div>
-          <div class="about-point">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <div>
-              <strong>Vozni park spreman za teren</strong>
-              <span>Vežbaš na vozilima koja su redovno servisirana i obeležena.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOKAZI -->
-  <section class="stats-section">
-    <div class="wrap stats-inner">
-      <div class="stats-head reveal">
-        <div class="eyebrow">Brojke koje stoje iza nas</div>
-        <h2>27 godina obučavamo vozače u Nišu</h2>
-        <p>Ne pravimo obećanja - imamo istoriju rada koja to potvrđuje.</p>
-      </div>
-      <div class="stats-row">
-        <div class="stat-box reveal">
-          <div class="num">1998.</div>
-          <div class="label">Godina osnivanja auto škole Reli</div>
-        </div>
-        <div class="stat-box reveal">
-          <div class="num">1000+</div>
-          <div class="label">Kandidata osposobljenih za samostalnu vožnju</div>
-        </div>
+      <div class="faq rv">
+        <details open>
+          <summary>Sa koliko godina mogu da počnem obuku za B?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Sa 16. Tada slušaš teoriju, polažeš teorijski ispit i voziš časove. Na praktični ispit izlaziš sa navršenih 17.</p></div>
+        </details>
+        <details>
+          <summary>Kada mi treba lekarsko uverenje?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Posle položenog teorijskog ispita, pre prvog časa vožnje. Za teoriju i teorijski ispit ti ne treba.</p></div>
+        </details>
+        <details>
+          <summary>Šta donosim na upis?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Važeću ličnu kartu, ispis radimo u kancelariji. Ako već imaš neku kategoriju, ponesi vozačku na uvid za skraćeni program.</p></div>
+        </details>
+        <details>
+          <summary>Imam A2. Kada mogu na ispit za A?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Ako A2 imaš najmanje dve godine, ispit za A polažeš sa navršenih 20. Bez toga obuku počinješ sa 23, a ispit polažeš sa 24.</p></div>
+        </details>
+        <details>
+          <summary>Gde slušam teoriju?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Biraš sam: u Đorđa Andrejevića Kuna 60 ili u Bulevaru Nemanjića 25, PC Zona 3, lokal 55. Obe lokacije imaju učionicu i kancelariju.</p></div>
+        </details>
+        <details>
+          <summary>Koliko košta obuka?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Zavisi od kategorije i dozvole koju već imaš. U <a href="#paket">kalkulatoru</a> vidiš broj časova, a tačnu cenu kažemo ti telefonom ili odgovorom na upit.</p></div>
+        </details>
+        <details>
+          <summary>Kome treba CPC i koliko važi?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Svakom vozaču C, C1, D, D1 i E kombinacija kome je vožnja osnovno zanimanje. Kartica važi 5 godina, a obnavljaš je sa 5 periodičnih seminara.</p></div>
+        </details>
+        <details>
+          <summary>Treba li mi seminar ako trenutno ne radim u transportu?<i aria-hidden="true"></i></summary>
+          <div class="ans"><p>Da. Seminar je obavezan za svakog vozača sa kvalifikacionom karticom, bez obzira na to da li trenutno vozi robu ili putnike.</p></div>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT / CTA -->
-  <section id="kontakt" class="cta-section">
-    <div class="wrap cta-grid">
-      <div class="cta-left reveal">
-        <div class="eyebrow">Prijava</div>
-        <h2>Rezerviši mesto u sledećoj grupi</h2>
-        <p>Pozovi nas direktno ili popuni formu - vraćamo se sa odgovorom istog radnog dana i dogovaramo termin prvog časa.</p>
-        <div class="contact-mini">
-          <a href="tel:+38118241241">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.87.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.88.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
-            018/241-241
-          </a>
-          <a href="mailto:info@autoskolareli.rs">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-            info@autoskolareli.rs
-          </a>
-        </div>
-        <div class="cta-direct">
-          <a href="tel:+38118241241" class="btn btn-primary">Pozovi auto školu odmah</a>
+  <!-- PRIJAVA -->
+  <section class="section dark apply" id="prijava">
+    <div class="wrap apply-grid">
+      <div class="rv">
+        <div class="tag"><span class="n">08</span> Prijava</div>
+        <h2 class="h2"><span class="s">Tvoj start</span><span class="s">je <em>jedan poziv.</em></span></h2>
+        <p class="lead"><span class="s">Pozovi lokaciju koja ti je bliža ili popuni prijavu.</span><span class="s">Prijava ti otvara gotov email, samo ga pošalješ.</span></p>
+        <div class="locs">
+          <div class="loc">
+            <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <small>Auto škola</small>
+              <h3>Đorđa Andrejevića Kuna 60, Niš</h3>
+              <div class="lines"><a href="tel:+38118572634">018/572-634</a><a href="tel:+381691166191">069/11-66-191</a><a class="mail" href="mailto:info@autoskolareli.rs">info@autoskolareli.rs</a></div>
+            </div>
+          </div>
+          <div class="loc">
+            <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <small>Auto škola i CPC centar</small>
+              <h3>Bulevar Nemanjića 25, PC Zona 3, lokal 55</h3>
+              <div class="lines"><a href="tel:+38118574757">018/57-47-57</a><a href="tel:+381695515000">069/55-15-000</a><a class="mail" href="mailto:cpc@autoskolareli.rs">cpc@autoskolareli.rs</a></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <form class="form-card reveal" action="#" onsubmit="return false;">
+      <form class="form rv" id="form" novalidate>
         <h3>Prijavi se za obuku</h3>
-        <p class="sub">Ostavi podatke i javljamo se sa slobodnim terminima.</p>
-        <div class="form-row">
-          <div class="field">
-            <label for="ime">Ime i prezime</label>
-            <input type="text" id="ime" name="ime" placeholder="Marko Marković" required>
-          </div>
-          <div class="field">
-            <label for="telefon">Telefon</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="060/123-4567" required>
-          </div>
+        <p class="sub">Ostavi podatke, javljamo ti se sa terminom prvog časa.</p>
+        <div class="row">
+          <div class="field"><label for="ime">Ime i prezime</label><input id="ime" name="ime" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="tel">Telefon</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
         </div>
-        <div class="form-row">
-          <div class="field full">
-            <label for="kategorija">Kategorija koja te interesuje</label>
-            <select id="kategorija" name="kategorija">
-              <option>AM - mopedi</option>
-              <option>A1 - motocikli do 125cc</option>
-              <option>A2 - motocikli srednje snage</option>
-              <option>A - motocikli bez ograničenja</option>
-              <option selected>B - putnički automobil</option>
-              <option>CPC - profesionalni vozači</option>
+        <div class="row">
+          <div class="field"><label for="kat">Kategorija</label>
+            <select id="kat" name="kat">
+              <option value="AM">AM - mopedi</option>
+              <option value="A1">A1 - motocikli do 125 cm³</option>
+              <option value="A2">A2 - motocikli do 35 kW</option>
+              <option value="A">A - motocikli preko 35 kW</option>
+              <option value="B" selected>B - putnički automobil</option>
+              <option value="CPC">CPC - profesionalni vozači</option>
+            </select>
+          </div>
+          <div class="field"><label for="lok">Lokacija</label>
+            <select id="lok" name="lok">
+              <option>Đorđa Andrejevića Kuna 60</option>
+              <option>Bulevar Nemanjića 25</option>
+              <option>Svejedno mi je</option>
             </select>
           </div>
         </div>
-        <div class="form-row">
-          <div class="field full">
-            <label for="poruka">Poruka (opciono)</label>
-            <textarea id="poruka" name="poruka" placeholder="Napiši nam kad ti termini najviše odgovaraju..."></textarea>
-          </div>
+        <div class="row">
+          <div class="field full"><label for="msg">Poruka</label><textarea id="msg" name="msg" placeholder="Na primer: kada ti najviše odgovaraju termini"></textarea></div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Pošalji upit za obuku</button>
+        <button type="submit" class="btn block"><span>Pošalji prijavu</span></button>
+        <p class="form-ok" id="formOk" role="status"></p>
+        <p class="fine-print">Prijava se šalje kao email na info@autoskolareli.rs, a za CPC na cpc@autoskolareli.rs.</p>
       </form>
     </div>
+  </section>
+
+  <!-- ZAVRSNICA -->
+  <section class="section final" aria-label="Učinimo saobraćaj bezbednijim">
+    <div class="wrap">
+      <div class="tag rv">Auto škola Reli · Niš</div>
+      <h2 class="h2 rv"><span class="ln">Učinimo saobraćaj</span><span class="ln"><em>bezbednijim.</em></span></h2>
+      <p class="lead rv"><span class="s">Od 1998. to nam je jedini cilj na svakom času.</span><span class="s">Pridruži nam se, na startu te čeka instruktor.</span></p>
+      <div class="final-cta rv">
+        <a href="#prijava" class="btn"><span>Prijavi se za obuku</span></a>
+        <a href="tel:+38118572634" class="btn ghost"><span>Pozovi 018/572-634</span></a>
+      </div>
+    </div>
+    <div class="finish-line" id="finish" aria-hidden="true"></div>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
+    <div class="f-grid">
       <div>
-        <img src="assets/logo.png" alt="Auto škola Reli - logo" class="footer-logo">
-        <p>Auto škola Reli iz Niša obučava kandidate za AM, A1, A2, A i B kategoriju i profesionalne vozače za CPC sertifikat, od 1998. godine.</p>
+        <img class="f-logo" src="assets/logo.webp" alt="Auto škola Reli" width="600" height="150" loading="lazy">
+        <p>Obuka za AM, A1, A2, A i B kategoriju i CPC centar za profesionalne vozače, u Nišu od 1998. godine.</p>
       </div>
-      <div class="footer-col">
+      <div class="f-col">
         <h4>Stranica</h4>
         <a href="#kategorije">Kategorije</a>
-        <a href="#uslovi">Uslovi i lokacije</a>
-        <a href="#o-nama">O nama</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#paket">Časovi i cena</a>
+        <a href="#put">Put do dozvole</a>
+        <a href="#cpc">CPC centar</a>
+        <a href="#pitanja">Pitanja</a>
       </div>
-      <div class="footer-col">
-        <h4>Kontakt</h4>
-        <a href="tel:+38118241241">018/241-241</a>
-        <a href="tel:+381601811011">060/1811-011</a>
+      <div class="f-col">
+        <h4>Auto škola</h4>
+        <span>Đorđa Andrejevića Kuna 60</span>
+        <a href="tel:+38118572634">018/572-634</a>
+        <a href="tel:+381691166191">069/11-66-191</a>
         <a href="mailto:info@autoskolareli.rs">info@autoskolareli.rs</a>
       </div>
+      <div class="f-col">
+        <h4>CPC centar</h4>
+        <span>Bulevar Nemanjića 25, lokal 55</span>
+        <a href="tel:+38118574757">018/57-47-57</a>
+        <a href="tel:+381695515000">069/55-15-000</a>
+        <a href="mailto:cpc@autoskolareli.rs">cpc@autoskolareli.rs</a>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Auto škola Reli, Niš. Sva prava zadržana.</span>
-      <span>Obuka od 1998. godine</span>
+    <div class="f-bottom">
+      <span>© 2026 Auto škola Reli, Niš. Sva prava zadržana.</span>
+      <span>Učinimo saobraćaj bezbednijim.</span>
     </div>
   </div>
 </footer>
 
 <script>
-  var burger = document.getElementById('burger');
-  var mobilePanel = document.getElementById('mobilePanel');
-  burger.addEventListener('click', function(){
-    burger.classList.toggle('active');
-    mobilePanel.classList.toggle('open');
-  });
+(function(){
+  var doc=document.documentElement;
+  doc.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  document.querySelectorAll('.mobile-panel a').forEach(function(a){
-    a.addEventListener('click', function(){
-      burger.classList.remove('active');
-      mobilePanel.classList.remove('open');
-    });
+  /* meni */
+  var burger=document.getElementById('burger'),panel=document.getElementById('mobilePanel');
+  burger.addEventListener('click',function(){
+    var open=panel.classList.toggle('open');burger.classList.toggle('active',open);burger.setAttribute('aria-expanded',open);
   });
+  panel.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){panel.classList.remove('open');burger.classList.remove('active');burger.setAttribute('aria-expanded','false');});});
 
-  var header = document.getElementById('site-header');
-  window.addEventListener('scroll', function(){
-    if(window.scrollY > 40){
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  var header=document.getElementById('header');
+  function onHeader(){header.classList.toggle('scrolled',scrollY>40);}
+  addEventListener('scroll',onHeader,{passive:true});onHeader();
 
-  document.querySelectorAll('.reveal').forEach(function(el){
-    el.classList.add('pending');
-  });
-
+  /* reveal + brojači + trake */
+  function countUp(el){
+    var to=+el.dataset.count,from=to>1000?1960:0,t0=null,dur=1400;
+    if(reduce){el.textContent=to;return;}
+    function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);el.textContent=Math.round(from+(to-from)*e);if(k<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
   if('IntersectionObserver' in window){
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.remove('pending');
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var el=e.target;el.classList.add('in');
+        el.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(el);
       });
-    }, {threshold: 0.15});
-
-    document.querySelectorAll('.reveal').forEach(function(el){
-      observer.observe(el);
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){
+      var sib=el.parentNode?Array.prototype.indexOf.call(el.parentNode.children,el):0;
+      el.style.transitionDelay=Math.min(sib,5)*70+'ms';
+      io.observe(el);
     });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el){
-      el.classList.remove('pending');
+    var h=document.getElementById('hours'),f=document.getElementById('finish');
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target);}});},{threshold:.2});
+    io2.observe(h);io2.observe(f);
+  }else{
+    document.querySelectorAll('.rv,#hours,#finish').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* kalkulator paketa (podaci sa autoskolareli.rs, po kategorijama) */
+  var HAS={none:'Nemam dozvolu',AM:'AM',AMA1:'AM ili A1',A2:'A2',A:'A',B:'B'};
+  var PKG={
+    AM:{title:'AM',veh:'Benelli Pepe, 49 cm³',start:15,exam:16,opts:{none:[40,7],B:[7,7]}},
+    A1:{title:'A1',veh:'Yamaha YBR 125',start:15,exam:16,opts:{none:[40,20],AM:[0,7],B:[7,20]}},
+    A2:{title:'A2',veh:'Kymco, automatski menjač',start:17,exam:18,opts:{none:[40,20],AM:[0,7],B:[7,20]}},
+    A:{title:'A',veh:'Kawasaki ER-6n',start:23,exam:24,opts:{none:[40,20],AM:[0,7],B:[7,20]},note:'Imaš A2 bar dve godine? Ispit za A polažeš već sa navršenih 20.'},
+    B:{title:'B',veh:'Automobil u Reli livreji',start:16,exam:17,opts:{none:[40,40],AMA1:[7,35],A2:[7,30],A:[7,30]}}
+  };
+  /* Kad škola pošalje cene, upiši ih ovde u dinarima, npr. 'B|none':95000 */
+  var CENE={};
+
+  var state={cat:'B',has:'none'};
+  var catChips=document.getElementById('catChips'),hasChips=document.getElementById('hasChips');
+  function casova(n){var d=n%10,s=n%100;if(d===1&&s!==11)return 'čas';if(d>=2&&d<=4&&(s<12||s>14))return 'časa';return 'časova';}
+  function bars(el,n){
+    if(!el.children.length){for(var i=0;i<40;i++)el.appendChild(document.createElement('i'));}
+    Array.prototype.forEach.call(el.children,function(b,i){
+      b.style.transitionDelay=(reduce?0:i*12)+'ms';b.classList.toggle('on',i<n);
     });
   }
-</script>
+  function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' din';}
+  function render(){
+    var p=PKG[state.cat];
+    if(!p.opts[state.has])state.has='none';
+    hasChips.innerHTML='';
+    Object.keys(p.opts).forEach(function(k){
+      var b=document.createElement('button');b.type='button';b.className='chip sm';b.dataset.has=k;
+      b.setAttribute('aria-pressed',k===state.has);b.innerHTML='<span>'+(k==='none'?'Nemam dozvolu':HAS[k])+'</span>';
+      hasChips.appendChild(b);
+    });
+    catChips.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c.dataset.cat===state.cat);});
+    var h=p.opts[state.has],base=p.opts.none,saved=(base[0]+base[1])-(h[0]+h[1]);
+    document.getElementById('tTitle').innerHTML='<span>'+p.title+'</span> kategorija';
+    document.getElementById('tT').innerHTML=(h[0]||'0')+'<small>'+casova(h[0])+'</small>';
+    document.getElementById('tP').innerHTML=h[1]+'<small>'+casova(h[1])+'</small>';
+    bars(document.getElementById('barsT'),h[0]);bars(document.getElementById('barsP'),h[1]);
+    var sv=document.getElementById('tSave');
+    if(saved>0){sv.hidden=false;sv.textContent=saved+' '+casova(saved)+' manje';}else sv.hidden=true;
+    var route=[];
+    route.push(h[0]?'<b>Teorijska obuka</b>, '+h[0]+' '+casova(h[0])+' u učionici':'<b>Bez teorijske obuke</b>, odmah na teorijski ispit');
+    route.push('<b>Teorijski ispit</b>, bez lekarskog uverenja');
+    route.push('<b>Lekarski pregled</b>, posle teorije, pre vožnje');
+    route.push('<b>Praktična obuka</b>, '+h[1]+' '+casova(h[1])+' na vozilu škole');
+    route.push('<b>Praktični ispit</b>, sa navršenih '+p.exam+' godina');
+    document.getElementById('tRoute').innerHTML=route.map(function(r){return '<li><span>'+r+'</span></li>';}).join('');
+    document.getElementById('tAge').textContent='Obuka od '+p.start+', ispit sa '+p.exam;
+    document.getElementById('tVeh').textContent=p.veh;
+    var key=state.cat+'|'+state.has,price=CENE[key];
+    document.getElementById('tPrice').textContent=price?fmt(price):'Na upit';
+    document.getElementById('tPriceNote').textContent=price?'Cena obuhvata teorijsku i praktičnu obuku iz ovog paketa.':'Tačan iznos za ovaj paket kažemo ti odmah, telefonom ili odgovorom na upit.';
+    var note=document.getElementById('pkgNote');
+    note.innerHTML=p.note?'<span class="s">'+p.note+'</span><span class="s">Za tačan plan obuke pozovi nas.</span>':'<span class="s">Uz postojeću dozvolu ideš na skraćeni program.</span><span class="s">Vozačku ponesi na uvid prilikom upisa.</span>';
+  }
+  catChips.addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;state.cat=c.dataset.cat;state.has='none';render();});
+  hasChips.addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;state.has=c.dataset.has;render();});
+  document.querySelectorAll('[data-pick]').forEach(function(a){a.addEventListener('click',function(){state.cat=a.dataset.pick;state.has='none';render();});});
+  render();
 
+  /* paket -> forma */
+  var kat=document.getElementById('kat'),msg=document.getElementById('msg');
+  document.getElementById('tSend').addEventListener('click',function(){
+    var p=PKG[state.cat],h=p.opts[state.has];
+    kat.value=state.cat;
+    msg.value='Zanima me cena paketa: '+p.title+' kategorija, '+(state.has==='none'?'bez prethodne dozvole':'imam '+HAS[state.has])+' ('+h[0]+' + '+h[1]+' časova).';
+  });
+  document.querySelectorAll('[data-pick-form]').forEach(function(a){a.addEventListener('click',function(){kat.value=a.dataset.pickForm;});});
+
+  /* forma -> email */
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var ime=document.getElementById('ime'),tel=document.getElementById('tel'),ok=document.getElementById('formOk');
+    if(!ime.value.trim()||!tel.value.trim()){ok.textContent='Upiši ime i broj telefona, da znamo koga zovemo.';ok.classList.add('show');(ime.value.trim()?tel:ime).focus();return;}
+    var to=kat.value==='CPC'?'cpc@autoskolareli.rs':'info@autoskolareli.rs';
+    var body='Ime i prezime: '+ime.value+'\nTelefon: '+tel.value+'\nKategorija: '+kat.options[kat.selectedIndex].text+'\nLokacija: '+document.getElementById('lok').value+'\n\n'+msg.value;
+    location.href='mailto:'+to+'?subject='+encodeURIComponent('Prijava za obuku - '+kat.value)+'&body='+encodeURIComponent(body);
+    ok.textContent='Otvorili smo ti email sa prijavom. Pošalji ga i javljamo ti se.';ok.classList.add('show');
+  });
+
+  /* roadbook: tačke se pale sa skrolom, brojač pređenih časova */
+  var rb=document.getElementById('roadbook'),rows=rb.querySelectorAll('.rb-row'),fill=document.getElementById('rbFill'),odo=document.getElementById('odo');
+  var ticking=false;
+  function rbUpdate(){
+    ticking=false;
+    var line=innerHeight*.6,r=rb.getBoundingClientRect();
+    var p=Math.max(0,Math.min(1,(line-r.top)/r.height));
+    fill.style.setProperty('--p',p.toFixed(3));
+    var hrs=0;
+    rows.forEach(function(row){
+      var rr=row.getBoundingClientRect(),on=rr.top+rr.height*.4<line;
+      row.classList.toggle('on',on);if(on)hrs=+row.dataset.h;
+    });
+    odo.textContent=(hrs<10?'0':'')+hrs;
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(rbUpdate);}},{passive:true});
+  addEventListener('resize',rbUpdate);rbUpdate();
+})();
+</script>
 </body>
 </html>
