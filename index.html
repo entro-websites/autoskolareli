@@ -211,10 +211,10 @@
 
   /* ===== TICKER ===== */
   .ticker{background:var(--red);color:#fff;overflow:hidden;position:relative;z-index:3;margin-top:-24px;transform:skewY(-1.2deg);box-shadow:0 16px 32px -16px var(--red-glow);}
-  .ticker-track{display:flex;width:max-content;animation:tick 36s linear infinite;padding-top:16px;padding-bottom:16px;transform:skewY(1.2deg);}
+  .ticker-track{display:flex;width:max-content;animation:tick 36s linear infinite;padding-top:16px;padding-bottom:16px;}
   .ticker-track span{font-family:var(--f-head);font-weight:800;font-style:italic;font-size:24px;text-transform:uppercase;letter-spacing:.04em;padding-left:24px;padding-right:24px;display:flex;align-items:center;gap:48px;white-space:nowrap;}
   .ticker-track span::after{content:"";width:24px;height:24px;background:conic-gradient(#fff 25%,var(--red-800) 0 50%,#fff 0 75%,var(--red-800) 0);background-size:12px 12px;transform:skewX(-12deg);}
-  @keyframes tick{to{transform:skewY(1.2deg) translateX(-50%)}}
+  @keyframes tick{to{transform:translateX(-50%)}}
 
   /* ===== STATS ===== */
   .stats{padding-top:var(--sec);padding-bottom:var(--sec);}
